@@ -1,7 +1,56 @@
+import { destinations } from "@/assets/assets";
+import Image from "next/image";
+import Link from "next/link";
+
 export default function PackPage() {
   return (
-    <div className="p-10">
-      <h1 className="text-3xl font-semibold">Our Packages</h1>
-    </div>
+    <section className="bg-gray-300 p-7 mx-7 mb-10 rounded-2xl mt-4">
+      {/* Header */}
+      <div className="flex flex-col md:flex-row justify-between items-center mb-10 text-black">
+        <h2 className="text-2xl md:text-3xl font-bold">Our Packages</h2>
+        <p className="md:w-96 text-center md:text-left font-semibold text-gray-800/90 mt-2 md:mt-0">
+          From island escapes to cool mountain towns, discover where your next
+          journey will take you.
+        </p>
+      </div>
+      {/* Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {destinations.map((item) => (
+          <Link
+            href={`pack/${item.id}`}
+            key={item.id}
+            className="relative h-[340px] rounded-2xl overflow-hidden group cursor-pointer"
+          >
+            {/* Image */}
+            <Image
+              src={item.image}
+              alt={item.title}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+
+            {/* Price */}
+            <span className="absolute top-3 right-3 bg-white/90 text-xs px-3 py-1 rounded-full font-medium">
+              starts at {item.price}
+            </span>
+
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-4 flex flex-col justify-end text-white">
+              <h3 className="text-lg font-semibold">{item.title}</h3>
+              <p className="text-sm text-gray-200">{item.subtitle}</p>
+
+              <div className="flex items-center justify-between mt-2 text-sm">
+                <span>
+                  ⭐ {item.rating} ({item.reviews})
+                </span>
+                <span className="text-xs text-gray-300">
+                  📍 {item.location}
+                </span>
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </section>
   );
 }

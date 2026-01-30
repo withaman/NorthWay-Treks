@@ -1,9 +1,10 @@
 import { destinations } from "@/assets/assets";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function DestinationSection() {
   return (
-    <section className="bg-gray-300 p-6 rounded-2xl mt-6">
+    <section className="bg-gray-300 md:p-6 rounded-2xl md:mt-6">
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-center mb-10 text-black">
           <h2 className="text-2xl md:text-3xl font-bold">
@@ -50,7 +51,7 @@ export default function DestinationSection() {
         ))}
       </div>
       <button className="hidden sm:block bg-gray-800 text-white px-4 py-2 rounded-full text-sm mt-4">
-          View more
+          <Link href="/pack">View more</Link>
         </button>
     </section>
   );

@@ -27,7 +27,7 @@ export default function FaqsPage() {
               className="w-full md:w-[45rem] flex justify-between items-center px-5 py-4 text-left text-gray-800 font-medium hover:bg-teal-50 transition"
             >
               {faq.question}
-              <span className="text-teal-600 text-xl">
+              <span className="text-orange-400 text-xl">
                 {openIndex === index ? "−" : "+"}
               </span>
             </button>
