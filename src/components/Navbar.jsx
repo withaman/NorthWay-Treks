@@ -19,9 +19,9 @@ export default function Navbar() {
                     {/* Desktop Menu */}
                     <ul className="hidden md:flex mr-[7rem] gap-6 font-semibold">
                         <li><Link href="/" className={navLink}>Home</Link></li>
-                        <li><Link href="/trails" className={navLink}>Trails</Link></li>
                         <li><Link href="/pack" className={navLink}>Packages</Link></li>
                         <li><Link href="/about" className={navLink}>About Us</Link></li>
+                        <li><Link href="/contact" className={navLink}>Contact</Link></li>
                     </ul>
 
                     {/* Desktop Button */}

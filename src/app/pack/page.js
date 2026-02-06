@@ -21,12 +21,11 @@ export default function PackPage() {
             key={item.id}
             className="relative h-[340px] rounded-2xl overflow-hidden group cursor-pointer"
           >
-            {/* Image */}
             <Image
-              src={item.image}
+              src={item.image?.[0] || "/hero.jpg"}
               alt={item.title}
               fill
-              className="object-cover group-hover:scale-105 transition-transform duration-300"
+              className="object-cover"
             />
 
             {/* Price */}

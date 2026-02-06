@@ -18,16 +18,16 @@ export default function FaqsPage() {
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className="border border-teal-200 rounded-lg overflow-hidden"
+            className="border-2 border-black rounded-lg overflow-hidden"
           >
             <button
               onClick={() =>
                 setOpenIndex(openIndex === index ? null : index)
               }
-              className="w-full md:w-[45rem] flex justify-between items-center px-5 py-4 text-left text-gray-800 font-medium hover:bg-teal-50 transition"
+              className="w-full md:w-[45rem] flex justify-between items-center px-5 py-4 text-left text-gray-800 font-medium hover:bg-orange-400 transition hover:text-black"
             >
               {faq.question}
-              <span className="text-orange-400 text-xl">
+              <span className="text-gray-600 text-xl">
                 {openIndex === index ? "−" : "+"}
               </span>
             </button>

@@ -1,34 +1,33 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
-export default function Carousel({ image }) {
+export default function Carousel({ images = [] }) { // default empty array
   const [active, setActive] = useState(0);
 
   useEffect(() => {
-    if (!image?.length) return;
+    if (!images.length) return;
 
     const timer = setInterval(() => {
-      setActive((prev) => (prev + 1) % image.length);
+      setActive((prev) => (prev + 1) % images.length);
     }, 4000);
 
     return () => clearInterval(timer);
-  }, [image]);
+  }, [images]);
 
   const prevSlide = () => {
-    setActive((prev) => (prev === 0 ? image.length - 1 : prev - 1));
+    setActive((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
 
   const nextSlide = () => {
-    setActive((prev) => (prev + 1) % image.length);
+    setActive((prev) => (prev + 1) % images.length);
   };
 
   return (
     <div className="relative w-full">
-      {/* Slides */}
       <div className="relative h-56 md:h-96 overflow-hidden rounded-2xl">
-        {image.map((img, index) => (
+        {images.map((img, index) => (
           <div
             key={index}
             className={`absolute inset-0 transition-opacity duration-700 ${
@@ -48,7 +47,7 @@ export default function Carousel({ image }) {
 
       {/* Indicators */}
       <div className="absolute z-30 flex -translate-x-1/2 bottom-4 left-1/2 gap-2">
-        {image.map((_, index) => (
+        {images.map((_, index) => (
           <button
             key={index}
             onClick={() => setActive(index)}

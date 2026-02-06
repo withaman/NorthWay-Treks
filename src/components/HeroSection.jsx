@@ -38,38 +38,72 @@ export default function HeroSection() {
 
           {/* RIGHT FORM */}
           <div className="w-full lg:w-1/3 flex justify-center items-center px-4 pb-10 lg:pb-0">
-            <form className="flex flex-col gap-5 border px-5 py-5 rounded-lg w-full max-w-md">
-              <p className="text-lg font-bold">
+            <form
+              className="
+      w-full max-w-md
+      flex flex-col gap-3
+      rounded-2xl
+      px-6 py-6
+
+      bg-white/15
+      backdrop-blur-xl
+      border border-white/30
+
+      shadow-xl shadow-black/20
+    "
+            >
+              <p className="text-lg font-semibold text-center text-white">
                 Fill up the form and our travel experts will soon reach out to you.
               </p>
 
+              {/* Inputs */}
               <input
                 type="text"
                 placeholder="Name"
-                className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-xl outline-none text-lg font-semibold"
+                className="glass-input border p-2 rounded-full"
               />
+
               <input
-                type="mail"
+                type="email"
                 placeholder="Email"
-                className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-xl outline-none text-lg font-semibold"
+                className="glass-input border p-2 rounded-full"
               />
+
               <input
                 type="text"
                 placeholder="Mobile"
-                className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-xl outline-none text-lg font-semibold"
+                className="glass-input border p-2 rounded-full"
               />
+
               <textarea
                 placeholder="Message"
-                className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-xl outline-none text-lg font-semibold"
+                rows={3}
+                className="glass-input resize-none border p-2 rounded-xl"
               />
 
-              <p className="text-[11px]">
+              <p className="text-[11px] text-white/70">
                 This site is protected by reCAPTCHA and the Google{" "}
-                <span className="text-yellow-300">Privacy Policy</span> and{" "}
-                <span className="text-yellow-300">Terms of Services</span> apply.
+                <span className="text-yellow-300 cursor-pointer">Privacy Policy</span> and{" "}
+                <span className="text-yellow-300 cursor-pointer">Terms of Services</span> apply.
               </p>
 
-              <button className="bg-white/20 backdrop-blur-md border border-white px-6 py-3 rounded-full font-medium">
+              {/* Button */}
+              <button
+                className="
+        mt-2
+        rounded-full
+        py-3
+        font-medium
+        text-white
+
+        bg-white/20
+        backdrop-blur-md
+        border border-white/30
+
+        hover:bg-white/30
+        transition-all duration-300
+      "
+              >
                 Submit
               </button>
             </form>
