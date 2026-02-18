@@ -4,7 +4,7 @@ import { image } from '@/assets/assets';
 
 export default function TopDestinations() {
   return (
-    <main className="min-h-screen py-10 px-4 md:px-10 mb-6">
+    <main className="py-5 px-4 md:px-10 ">
       {/*Header & Filters */}
       <div className="max-w-7xl mx-auto text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3 tracking-tight">Top Destination</h1>

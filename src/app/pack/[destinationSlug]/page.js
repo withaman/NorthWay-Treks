@@ -10,5 +10,5 @@ export default async function DestinationPage({ params }) {
   if (!trekInfo) return <div>Destination not found</div>;
 
   // render the layout
-  //   return <PlaceLayout trekInfo={trekInfo} />;
+    return <PlaceLayout trekInfo={trekInfo} />;
 }

@@ -104,22 +104,22 @@ export default function PlaceLayout({ trekInfo }) {
           {/* RIGHT FORM */}
           <div className="lg:w-1/3">
             <form className="sticky top-24 flex flex-col gap-4 bg-white p-6 rounded-2xl shadow-lg">
-              <input type="text" placeholder="Full Name" required className="input-style" />
-              <input type="tel" placeholder="Phone Number" required className="input-style" />
-              <input type="email" placeholder="Email (Optional)" className="input-style" />
+              <input type="text" placeholder="Full Name" required className="input-style border rounded-lg p-1" />
+              <input type="tel" placeholder="Phone Number" required className="input-style border rounded-lg p-1" />
+              <input type="email" placeholder="Email (Optional)" className="input-style border rounded-lg p-1" />
               <div className="flex gap-3">
                 <div className="w-1/2">
                   <label className="text-xs font-semibold text-gray-600 mb-1 block">From Date</label>
-                  <input type="date" required className="input-style w-full" />
+                  <input type="date" required className="input-style w-full border rounded-lg p-1" />
                 </div>
                 <div className="w-1/2">
                   <label className="text-xs font-semibold text-gray-600 mb-1 block">To Date</label>
-                  <input type="date" required className="input-style w-full" />
+                  <input type="date" required className="input-style w-full border rounded-lg p-1" />
                 </div>
               </div>
               <div>
                 <label className="text-xs font-semibold text-gray-600 mb-1 block">Number of Persons</label>
-                <select required className="input-style w-full">
+                <select required className="input-style w-full border rounded-lg p-1">
                   <option value="">Select Persons</option>
                   <option value="1">1 Person</option>
                   <option value="2">2 Persons</option>
@@ -128,7 +128,7 @@ export default function PlaceLayout({ trekInfo }) {
                   <option value="5+">5+ Persons</option>
                 </select>
               </div>
-              <textarea placeholder="Message (Optional)" rows={3} className="input-style" />
+              <textarea placeholder="Message (Optional)" rows={3} className="input-style border rounded-lg p-1" />
               <p className="text-[11px] text-gray-500">
                 This site is protected by reCAPTCHA and the Google
                 <span className="text-yellow-500"> Privacy Policy </span>&

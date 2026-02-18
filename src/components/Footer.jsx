@@ -10,11 +10,11 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="relative w-full min-h-[50vh] flex items-center">
+    <footer className="relative w-full min-h-[10vh] flex items-center">
       
       {/* Background Image */}
       <Image
-        src={image.hero}
+        src={image.footer}
         alt="Northway Treks"
         fill
         priority
@@ -25,20 +25,21 @@ export default function Footer() {
       <div className="absolute inset-0 bg-black/60"></div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col md:flex-row justify-evenly w-full mx-auto px-6 py-12 gap-10 text-white">
+      <div className="relative z-10 flex flex-col md:flex-row w-full justify-between mx-auto px-15 py-15 gap-10 text-white">
 
         {/* Brand Section */}
         <div className="flex flex-col gap-3">
-          <h1 className="text-4xl font-semibold">NorthWay Treks</h1>
-          <p className="italic text-lg leading-relaxed w-84">
+          <h1 className="text-3xl font-semibold">NorthWay Treks</h1>
+          <p className="italic text-md leading-relaxed w-84">
             Every trail with Northway Treks is a journey into nature, culture,
             and unforgettable Himalayan memories.
           </p>
         </div>
 
-            {/* Quick Links */}
+       <div className='flex gap-15'>
+             {/* Quick Links */}
         <div className="flex flex-col gap-4">
-          <h3 className="text-lg font-semibold">Quick Links</h3>
+          <h3 className="text-md font-semibold">Quick Links</h3>
           <ul className="flex flex-col gap-3 text-sm">
             <li><Link href="/" className="hover:text-gray-300">Home</Link></li>
             <li><Link href="/pack" className="hover:text-gray-300">Packages</Link></li>
@@ -49,7 +50,7 @@ export default function Footer() {
 
         {/* Contact Section */}
         <div className="flex flex-col gap-4">
-          <h3 className="text-lg font-semibold">Contact</h3>
+          <h3 className="text-md font-semibold">Contact</h3>
 
           <ul className="flex flex-col gap-4 text-sm">
 
@@ -85,6 +86,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
+       </div>
         </div>
     </footer>
   )

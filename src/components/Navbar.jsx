@@ -12,7 +12,7 @@ export default function Navbar() {
     return (
         <>
             {/* NAVBAR */}
-            <header className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md">
+            <header className="fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-md">
                 <div className="flex justify-between items-center px-6 py-4">
                     {/* Logo */}
                     <div className="text-xl font-bold">NorthWay Treks</div>
@@ -26,7 +26,7 @@ export default function Navbar() {
 
                     {/* Desktop Button */}
                     <div className="hidden md:block font-semibold border rounded-2xl px-4 py-1 bg-black text-white cursor-pointer">
-                        Sign Up
+                        Book Now
                     </div>
 
                     {/* Hamburger */}
