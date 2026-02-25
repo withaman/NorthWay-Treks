@@ -6,7 +6,7 @@ export default function FaqsPage() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section className="max-w-4xl mx-auto px-4 py-16">
+    <section className="max-w-4xl mx-auto px-4 py-10">
       {/* Heading */}
       <div className="text-center mb-12">
         <p className="text-teal-600 italic text-sm">Explore</p>

@@ -3,31 +3,38 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-export default function Carousel({ images = [] }) { // default empty array
+export default function Carousel({ images = [] }) {
+
+  const slicedImages = images.slice(1);
+
   const [active, setActive] = useState(0);
 
   useEffect(() => {
-    if (!images.length) return;
+    if (!slicedImages.length) return;
 
     const timer = setInterval(() => {
-      setActive((prev) => (prev + 1) % images.length);
+      setActive((prev) => (prev + 1) % slicedImages.length);
     }, 4000);
 
     return () => clearInterval(timer);
-  }, [images]);
+  }, [slicedImages]);
 
   const prevSlide = () => {
-    setActive((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    setActive((prev) =>
+      prev === 0 ? slicedImages.length - 1 : prev - 1
+    );
   };
 
   const nextSlide = () => {
-    setActive((prev) => (prev + 1) % images.length);
+    setActive((prev) => (prev + 1) % slicedImages.length);
   };
+
+  if (!slicedImages.length) return null;
 
   return (
     <div className="relative w-full">
       <div className="relative h-56 md:h-96 overflow-hidden rounded-2xl">
-        {images.map((img, index) => (
+        {slicedImages.map((img, index) => (
           <div
             key={index}
             className={`absolute inset-0 transition-opacity duration-700 ${
@@ -47,7 +54,7 @@ export default function Carousel({ images = [] }) { // default empty array
 
       {/* Indicators */}
       <div className="absolute z-30 flex -translate-x-1/2 bottom-4 left-1/2 gap-2">
-        {images.map((_, index) => (
+        {slicedImages.map((_, index) => (
           <button
             key={index}
             onClick={() => setActive(index)}

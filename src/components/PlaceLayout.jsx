@@ -4,17 +4,15 @@ import Carousel from "@/components/Carousel";
 import { useState } from "react";
 
 export default function PlaceLayout({ trekInfo }) {
-  // const trek = destinations[1]; // first trek
   console.log(trekInfo)
   const [activeIndex, setActiveIndex] = useState(null);
-  // const [treks, setTreks] = useState(destinations);
 
   const toggleFAQ = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-4 py-10">
+    <section className="max-w-7xl mx-auto px-4 py-5">
       {/* Carousel */}
       <Carousel images={trekInfo.image} />
 

@@ -1,14 +1,218 @@
 import hero from "./hero.jpg";
-import footer from "./footer.jpg"
+import footer from "./footer.jpg";
 import servicebg from "./servicesbackground.jpg";
+import contactus from "./contactus.jpeg";
+
 import kedarkantha from "./kedarkantha-m.jpg";
 import k1 from "./k-1.jpg";
 import k2 from "./k-2.jpg";
 import k3 from "./k-3.jpg";
+import tungnath from "./tungnath.jpg";
+import tungnath1 from "./tungnath-1.jpeg";
+import tungnath2 from "./tungnath-2.jpg";
+import tungnath3 from "./tungnath-3.jpg";
+import tungnath4 from "./tungnath-4.jpg";
+import tungnath5 from "./tungnath-5.jpeg";
+import kuaripass from "./kuaripass.jpeg";
+import kpass1 from "./kpass-1.jpeg";
+import kpass2 from "./kpass-2.jpeg";
+import kpass3 from "./kpass-3.jpeg";
+import kpass4 from "./kpass-4.jpeg";
+import dayarabugyal from "./dayarabugyal.jpeg";
+import dayara1 from "./dayara-1.jpeg";
+import dayara2 from "./dayara-2.jpeg";
+import dayara3 from "./dayara-3.jpeg";
+import dayara4 from "./dayara-4.jpg";
+import pangarchulla from "./pangarchulla.jpg";
+import pangar1 from "./pangar-1.jpg";
+import pangar2 from "./pangar-2.jpeg";
+import pangar3 from "./pangar-3.jpeg";
+import pangar4 from "./pangar-4.jpeg";
+import nagtibba from "./nagtibba.jpg";
+import nag1 from "./nag-1.jpg";
+import nag2 from "./nag-2.jpeg";
+import nag3 from "./nag-3.jpeg";
+import nag4 from "./nag-4.jpeg";
+import binoghill from "./binoghill.jpg";
+import binog1 from "./binog-1.jpg";
+import binog2 from "./binog-2.jpeg";
+import binog3 from "./binog-3.jpeg";
+import binog4 from "./binog-4.jpeg";
+import chardham from "./chardham.jpg";
+import kedarnath from "./kedarnath.jpg";
+import badrinath from "./Badrinath.jpeg";
+import yamnotri from "./yamnotri.jpeg";
+import gangotri from "./gangotri.jpeg";
+import harkidun from "./harkidun.jpeg";
+import hkd1 from "./hkd-1.jpeg";
+import hkd2 from "./hkd-2.jpg";
+import hkd3 from "./hkd-3.jpg";
+import hkd4 from "./hkd-4.jpg";
+import hkd5 from "./hkd-5.jpeg";
 
-export const image = { hero, footer, servicebg, kedarkantha };
+export const image = { hero, footer, servicebg, contactus, kedarkantha };
 
 export const destinations = [
+  {
+    id: "char-dham-yatra",
+    title: "Char Dham Yatra",
+    subtitle: "Sacred Himalayan Pilgrimage",
+    price: "₹24,999",
+    rating: "4.8 (12k)",
+    location: "Yamunotri, Gangotri, Kedarnath, Badrinath - Uttarakhand",
+    duration: "10 Days / 9 Nights",
+    altitude: "11,755 ft (Kedarnath)",
+    difficulty: "Moderate",
+    startingPoint: "Haridwar / Dehradun",
+
+    bestSeason: ["May", "June", "September", "October"],
+    trekType: ["Religious Tour", "Spiritual Journey", "Himalayan Yatra"],
+
+    image: [chardham, badrinath, kedarnath, yamnotri, gangotri],
+
+    intro: `Char Dham Yatra is one of the most sacred pilgrimages in India, covering Yamunotri, Gangotri, Kedarnath, and Badrinath in Uttarakhand. Nestled in the Garhwal Himalayas, this spiritual journey attracts thousands of devotees seeking blessings and divine peace.`,
+
+    about: {
+      location: "Garhwal Himalayas, Uttarakhand",
+      altitude: "11,755 ft (Kedarnath - Highest Dham)",
+      duration: "10 Days / 9 Nights",
+      difficulty: "Moderate",
+      bestSeason: "May to June & September to October",
+      startingPoint: "Haridwar / Dehradun",
+      description:
+        "The Char Dham circuit includes Yamunotri (source of River Yamuna), Gangotri (origin of River Ganga), Kedarnath (Jyotirlinga of Lord Shiva), and Badrinath (temple of Lord Vishnu). The journey combines devotion, scenic Himalayan drives, and moderate trekking.",
+    },
+
+    whyChoose: [
+      "One of India's holiest pilgrimages",
+      "Visit all four sacred shrines in one journey",
+      "Beautiful Himalayan landscapes",
+      "Spiritual and cultural experience",
+      "Comfortable stays & guided assistance",
+      "Perfect blend of devotion & adventure",
+    ],
+
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Haridwar → Barkot",
+        description:
+          "Drive via Mussoorie and Kempty Falls. Reach Barkot for overnight stay.",
+      },
+      {
+        day: "Day 2",
+        title: "Barkot → Yamunotri → Barkot",
+        altitude: "10,804 ft",
+        description:
+          "Drive to Janki Chatti and trek 6 km to Yamunotri Temple. Return to Barkot.",
+      },
+      {
+        day: "Day 3",
+        title: "Barkot → Uttarkashi",
+        description:
+          "Scenic drive to Uttarkashi. Visit Kashi Vishwanath Temple. Overnight stay.",
+      },
+      {
+        day: "Day 4",
+        title: "Uttarkashi → Gangotri → Uttarkashi",
+        altitude: "10,200 ft",
+        description:
+          "Drive to Gangotri Temple, offer prayers, and return to Uttarkashi.",
+      },
+      {
+        day: "Day 5",
+        title: "Uttarkashi → Guptkashi",
+        description:
+          "Long scenic drive along rivers and mountains. Overnight stay at Guptkashi.",
+      },
+      {
+        day: "Day 6",
+        title: "Guptkashi → Kedarnath",
+        altitude: "11,755 ft",
+        description:
+          "Drive to Sonprayag and trek 16 km to Kedarnath Temple (or helicopter option available).",
+      },
+      {
+        day: "Day 7",
+        title: "Kedarnath → Guptkashi",
+        description:
+          "Morning darshan at Kedarnath Temple. Trek back and drive to Guptkashi.",
+      },
+      {
+        day: "Day 8",
+        title: "Guptkashi → Badrinath",
+        altitude: "10,279 ft",
+        description:
+          "Drive to Badrinath via Joshimath. Evening aarti at Badrinath Temple.",
+      },
+      {
+        day: "Day 9",
+        title: "Badrinath → Rudraprayag",
+        description:
+          "Visit Mana Village (last Indian village). Drive to Rudraprayag for overnight stay.",
+      },
+      {
+        day: "Day 10",
+        title: "Rudraprayag → Haridwar",
+        description: "Return journey to Haridwar with divine memories.",
+      },
+    ],
+
+    fitness: {
+      level: "Moderate",
+      suitableFor: [
+        "Families",
+        "Senior citizens (with medical fitness)",
+        "Devotees",
+        "Spiritual travelers",
+      ],
+      recommended: [
+        "Basic walking stamina",
+        "Medical check-up before travel",
+        "Comfortable with long road journeys",
+      ],
+    },
+
+    packingList: [
+      "Warm clothes (even in summer)",
+      "Comfortable walking shoes",
+      "Raincoat / Poncho",
+      "Personal medicines",
+      "ID proof (mandatory)",
+      "Sunscreen & sunglasses",
+    ],
+
+    trekfaqs: [
+      {
+        question: "When does Char Dham Yatra open?",
+        answer:
+          "Char Dham usually opens in April/May (Akshaya Tritiya) and closes around October/November (Diwali).",
+      },
+      {
+        question: "Is the trek difficult?",
+        answer:
+          "The journey involves moderate trekking, especially to Yamunotri and Kedarnath.",
+      },
+      {
+        question: "Is helicopter service available?",
+        answer:
+          "Yes, helicopter services are available for Kedarnath from Phata, Guptkashi, and Dehradun.",
+      },
+      {
+        question: "Are senior citizens allowed?",
+        answer:
+          "Yes, but medical fitness is recommended due to high altitude conditions.",
+      },
+      {
+        question: "Do we need registration?",
+        answer: "Yes, biometric registration is mandatory for Char Dham Yatra.",
+      },
+      {
+        question: "Is accommodation included?",
+        answer: "Yes, accommodation and meals are included as per package.",
+      },
+    ],
+  },
   {
     id: "kedarkantha-trek",
     title: "Kedarkantha Trek",
@@ -24,7 +228,7 @@ export const destinations = [
     bestSeason: ["December", "January", "February", "March"],
     trekType: ["Winter Trek", "Beginner Trek"],
 
-    image: [kedarkantha,k1,k2,k3, ],
+    image: [kedarkantha, k1, k2, k3],
 
     intro: `Kedarkantha Trek is one of the most popular winter treks in India, located in the Govind Wildlife Sanctuary of Uttarkashi district, Uttarakhand. Famous for its snow-covered trails, pine forests, and breathtaking summit views, this trek is ideal for beginners as well as experienced trekkers.`,
 
@@ -157,12 +361,7 @@ export const destinations = [
     bestSeason: ["March", "April", "May", "October", "November"],
     trekType: ["Spiritual Trek", "Weekend Trek"],
 
-    images: [
-      "/tungnath.jpg",
-      "/tungnath.jpg",
-      "/tungnath.jpg",
-      "/tungnath.jpg",
-    ],
+    image: [tungnath, tungnath1, tungnath2, tungnath3, tungnath4, tungnath5],
 
     intro: `The Tungnath–Chandrashila Trek is one of the most scenic and spiritually enriching treks in Uttarakhand. Home to Tungnath Temple, the highest Shiva temple in the world, this trek offers breathtaking Himalayan views combined with deep religious significance. Ideal for beginners and weekend travelers, the trek starts from Chopta—also known as the Mini Switzerland of India.`,
 
@@ -279,7 +478,7 @@ export const destinations = [
     bestSeason: ["April", "May", "June", "September", "October", "November"],
     trekType: ["Valley Trek", "Beginner Friendly", "Summer Trek"],
 
-    image: ["/hero.jpg", "/hero.jpg", "/hero.jpg", "/hero.jpg"],
+    image: [harkidun, hkd1, hkd2, hkd3, hkd4, hkd5],
 
     intro: `Har Ki Dun Trek is a breathtaking river valley trek located in the Govind Wildlife Sanctuary of Uttarkashi, Uttarakhand. Surrounded by snow-clad peaks, alpine meadows, ancient villages, and lush forests, this trek offers a perfect blend of nature, culture, and adventure.`,
 
@@ -431,7 +630,7 @@ export const destinations = [
     ],
     trekType: ["Snow Trek", "Beginner Friendly", "Himalayan Views Trek"],
 
-    image: ["/hero.jpg", "/hero.jpg", "/hero.jpg", "/hero.jpg"],
+    image: [kuaripass, , kpass1, kpass2, kpass3, kpass4],
 
     intro: `Kuari Pass Trek, also known as the Lord Curzon Trail, is one of the most scenic Himalayan treks in Uttarakhand. Famous for its breathtaking views of Nanda Devi, Dronagiri, Kamet, and other towering peaks, this trek offers a perfect mix of forests, meadows, and snow trails, making it ideal for beginners and nature lovers.`,
 
@@ -583,7 +782,7 @@ export const destinations = [
     ],
     trekType: ["Meadow Trek", "Snow Trek", "Beginner Friendly"],
 
-    image: ["/hero.jpg", "/hero.jpg", "/hero.jpg", "/hero.jpg"],
+    image: [dayarabugyal, dayara1, dayara2, dayara3, dayara4],
 
     intro: `Dayara Bugyal Trek is one of the most beautiful meadow treks in Uttarakhand, offering vast rolling grasslands, panoramic Himalayan views, and a peaceful trekking experience. Perfect for beginners, this trek showcases lush green meadows in summer and snow-covered landscapes in winter.`,
 
@@ -720,7 +919,7 @@ export const destinations = [
     bestSeason: ["April", "May", "June", "September", "October"],
     trekType: ["Peak Trek", "Adventure Trek", "Snow Trek"],
 
-    image: ["/hero.jpg", "/hero.jpg", "/hero.jpg", "/hero.jpg"],
+    image: [pangarchulla, pangar1, pangar2, pangar3, pangar4],
 
     intro: `Pangarchulla Peak Trek is a thrilling high-altitude summit trek located near Joshimath in Uttarakhand. Known for its steep summit climb and breathtaking views of Nanda Devi, Dronagiri, Chaukhamba, and Kamet peaks, this trek is perfect for adventure seekers looking for a challenging Himalayan experience.`,
 
@@ -874,7 +1073,7 @@ export const destinations = [
     ],
     trekType: ["Weekend Trek", "Beginner Friendly", "Snow Trek"],
 
-    image: ["/hero.jpg", "/hero.jpg", "/hero.jpg", "/hero.jpg"],
+    image: [nagtibba, nag1, nag2, nag3, nag4],
 
     intro: `Nag Tibba Trek is the perfect weekend Himalayan getaway near Dehradun and Mussoorie. Standing at 9,915 ft, it is the highest peak in the lower Himalayan region of Uttarakhand. Ideal for beginners, this short trek offers beautiful forest trails, snow in winter, and stunning views of Bandarpoonch, Swargarohini, and Gangotri ranges.`,
 
@@ -977,130 +1176,6 @@ export const destinations = [
     ],
   },
   {
-    id: "kareri-lake-trek",
-    title: "Kareri Lake Trek",
-    subtitle: "Scenic Alpine Lake Trek",
-    price: "₹4,999",
-    rating: "4.7 (6k)",
-    location: "Kareri Village, Kangra, Himachal Pradesh",
-    duration: "3–4 Days",
-    altitude: "9,650 ft",
-    difficulty: "Easy to Moderate",
-    startingPoint: "Dharamshala",
-
-    bestSeason: ["April", "May", "June", "September", "October", "November"],
-    trekType: ["Lake Trek", "Beginner Friendly", "Weekend Trek"],
-
-    image: ["/hero.jpg", "/hero.jpg", "/hero.jpg", "/hero.jpg"],
-
-    intro: `Kareri Lake Trek is a beautiful high-altitude lake trek located in the Dhauladhar range of Himachal Pradesh. Known for its crystal-clear glacial lake, scenic forest trails, and peaceful campsites, this trek is perfect for beginners and weekend adventurers seeking a Himalayan escape.`,
-
-    about: {
-      location: "Kareri Village, Kangra, Himachal Pradesh",
-      altitude: "9,650 ft (2,940 meters)",
-      duration: "3–4 Days",
-      difficulty: "Easy to Moderate",
-      bestSeason: "April to June & September to November",
-      startingPoint: "Dharamshala",
-      description:
-        "Kareri Lake is a shallow, freshwater lake fed by melting snow from the Dhauladhar range. The trek passes through pine forests, wooden bridges, and riverside trails before opening up to the scenic alpine lake surrounded by snow-clad peaks.",
-    },
-
-    whyChoose: [
-      "Beautiful crystal-clear alpine lake",
-      "Perfect weekend Himalayan getaway",
-      "Scenic Dhauladhar mountain views",
-      "Riverside & forest trail experience",
-      "Less crowded compared to popular treks",
-      "Ideal for beginners & small groups",
-    ],
-
-    itinerary: [
-      {
-        day: "Day 1",
-        title: "Dharamshala → Kareri Village",
-        description:
-          "Drive to Kareri village. Short acclimatization walk and overnight stay at guesthouse or homestay.",
-      },
-      {
-        day: "Day 2",
-        title: "Kareri Village → Kareri Lake",
-        altitude: "9,650 ft",
-        description:
-          "Trek through pine forests, wooden bridges, and riverside trails. Reach Kareri Lake campsite by evening.",
-      },
-      {
-        day: "Day 3",
-        title: "Explore Kareri Lake → Return to Kareri Village",
-        description:
-          "Morning exploration around the lake and nearby Nag Temple. Descend back to Kareri village.",
-      },
-      {
-        day: "Day 4 (Optional)",
-        title: "Return to Dharamshala",
-        description:
-          "Leisure breakfast and drive back to Dharamshala. (Trek can be completed in 3 days depending on itinerary.)",
-      },
-    ],
-
-    fitness: {
-      level: "Easy to Moderate",
-      suitableFor: [
-        "Beginners",
-        "Weekend travelers",
-        "Nature lovers",
-        "College groups",
-      ],
-      recommended: [
-        "Walk 4–5 km comfortably",
-        "Basic stamina & endurance",
-        "No technical trekking skills required",
-      ],
-    },
-
-    packingList: [
-      "Light down jacket",
-      "Comfortable trekking shoes",
-      "Rain jacket/poncho",
-      "Sunglasses & sunscreen",
-      "Trekking pole",
-      "Personal medicines",
-    ],
-
-    trekfaqs: [
-      {
-        question: "Is Kareri Lake Trek suitable for beginners?",
-        answer:
-          "Yes, it is a beginner-friendly trek with gradual ascent and well-marked trails.",
-      },
-      {
-        question: "Is camping allowed near Kareri Lake?",
-        answer:
-          "Camping is allowed at designated campsites near the lake as per forest guidelines.",
-      },
-      {
-        question: "When is the best time to visit Kareri Lake?",
-        answer:
-          "April to June and September to November are the best seasons for clear weather and pleasant temperatures.",
-      },
-      {
-        question: "Is snowfall available on this trek?",
-        answer:
-          "Snowfall may be experienced in winter months, especially near the lake area.",
-      },
-      {
-        question: "Do we need prior trekking experience?",
-        answer:
-          "No prior trekking experience is required, but basic fitness is recommended.",
-      },
-      {
-        question: "Are permits required?",
-        answer:
-          "Local forest permissions may be required and are usually arranged by the trek operator.",
-      },
-    ],
-  },
-  {
     id: "benog-hill-trek",
     title: "Benog Hill Trek",
     subtitle: "Hidden Gem Near Mussoorie",
@@ -1123,7 +1198,7 @@ export const destinations = [
     ],
     trekType: ["Nature Walk", "Weekend Trek", "Beginner Friendly"],
 
-    image: ["/hero.jpg", "/hero.jpg", "/hero.jpg", "/hero.jpg"],
+    image: [binoghill, binog1, binog2, binog3, binog4],
 
     intro: `Benog Hill Trek, located inside the Benog Wildlife Sanctuary near Mussoorie, is a peaceful and less crowded trail perfect for beginners and nature lovers. Surrounded by dense forests and panoramic Himalayan views, this short trek is ideal for a quick mountain escape.`,
 

@@ -1,3 +1,5 @@
+import { image } from "@/assets/assets";
+import Image from "next/image";
 import { RiFacebookFill, RiInstagramFill, RiTwitterFill, RiYoutubeFill } from "react-icons/ri";
 
 export default function ContactPage() {
@@ -5,8 +7,8 @@ export default function ContactPage() {
     <main className="w-full">
       {/* HERO SECTION */}
       <section className="relative h-[40vh] md:h-[50vh] w-full">
-        <img
-          src="/contact-hero.jpg" // replace with your image
+        <Image
+          src={image.contactus} // replace with your image
           alt="Contact"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -28,7 +30,7 @@ export default function ContactPage() {
           ].map((item, i) => (
             <div
               key={i}
-              className="bg-white rounded-xl shadow-lg p-6 text-center"
+              className="bg-yellow-300 rounded-xl shadow-lg p-6 text-center"
             >
               <h3 className="font-semibold text-lg">{item.title}</h3>
               <p className="text-sm text-gray-600 mt-2">{item.value}</p>
@@ -72,7 +74,7 @@ export default function ContactPage() {
         </div>
 
         {/* RIGHT FORM */}
-        <form className="bg-white rounded-xl shadow-xl p-6 space-y-4">
+        <form className="bg-gray-100 rounded-xl shadow-xl p-6 space-y-4">
           <input className="input outline-none" placeholder="Full Name" />
           <input className="input outline-none" placeholder="Email" />
           <select className="input">
@@ -94,7 +96,7 @@ export default function ContactPage() {
       </section>
 
       {/* MAP SECTION */}
-      <section className="w-full h-[400px]">
+      <section className="w-full h-[400px] mb-10">
         <iframe
           className="w-full h-full"
           src="https://www.google.com/maps?q=Dehradun&output=embed"

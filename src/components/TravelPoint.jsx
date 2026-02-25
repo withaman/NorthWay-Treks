@@ -6,7 +6,7 @@ import React from 'react'
 
 export default function TravelPoint() {
     return (
-        <div className="flex flex-col md:flex-row justify-center items-center my-10 px-4">
+        <div className="flex flex-col md:flex-row justify-center items-center px-4">
   
   {/* IMAGE SECTION */}
   <div className="w-full md:w-1/2 flex justify-center relative mb-10 md:mb-0">

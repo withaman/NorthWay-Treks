@@ -17,7 +17,7 @@ export default function Navbar() {
                     {/* Logo */}
                     <div className="text-xl font-bold">NorthWay Treks</div>
                     {/* Desktop Menu */}
-                    <ul className="hidden md:flex mr-[7rem] gap-6 font-semibold">
+                    <ul className="hidden md:flex mr-[3rem] gap-6 font-semibold">
                         <li><Link href="/" className={navLink}>Home</Link></li>
                         <li><Link href="/pack" className={navLink}>Packages</Link></li>
                         <li><Link href="/about" className={navLink}>About Us</Link></li>
@@ -58,9 +58,9 @@ export default function Navbar() {
                 {/* Menu Links */}
                 <ul className="flex flex-col items-center justify-center gap-6 h-[80vh] text-xl font-semibold">
                     <li><Link onClick={() => setOpen(false)} href="/">Home</Link></li>
-                    <li><Link onClick={() => setOpen(false)} href="/trails">Trails</Link></li>
                     <li><Link onClick={() => setOpen(false)} href="/pack">Packages</Link></li>
                     <li><Link onClick={() => setOpen(false)} href="/about">About Us</Link></li>
+                    <li><Link onClick={() => setOpen(false)} href="/contact">Contact</Link></li>
 
                     <li className="pt-4">
                         <button className="bg-black text-white px-8 py-3 rounded-2xl">
