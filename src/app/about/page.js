@@ -13,7 +13,7 @@ export default function About() {
         
         {/* Background Image */}
         <Image
-          src={image.servicebg}
+          src={image.about}
           alt="About Us Background"
           fill
           priority
@@ -21,7 +21,7 @@ export default function About() {
         />
 
         {/* Green Overlay */}
-        <div className="absolute inset-0 bg-green-900/50"></div>
+        <div className="absolute inset-0 bg-green-900/10"></div>
 
         {/* Content */}
         <div className="relative z-10 max-w-3xl px-6">
@@ -48,7 +48,7 @@ export default function About() {
         {/* Curved Bottom */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
           <svg
-            viewBox="0 0 500 80"
+            viewBox="0 0 500 110"
             preserveAspectRatio="none"
             className="w-full h-20"
           >
@@ -92,7 +92,7 @@ export default function About() {
           {/* Image */}
           <div className="relative h-80 rounded-xl overflow-hidden shadow-lg">
             <Image
-              src={image.servicebg}
+              src={image.about1}
               alt="About Northway Treks"
               fill
               className="object-cover"

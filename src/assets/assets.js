@@ -1,7 +1,14 @@
 import hero from "./hero.jpg";
 import footer from "./footer.jpg";
 import servicebg from "./servicesbackground.jpg";
-import contactus from "./contactus.jpeg";
+import contactus from "./contact.jpg";
+import t1 from "./travelpoint.jpg";
+import t2 from "./travelpoint1.jpg";
+import support from "./support.jpg";
+import guide from "./guide.jpg";
+import compass from "./compass.jpg";
+import about from "./about.jpg";
+import about1 from "./about1.jpg";
 
 import kedarkantha from "./kedarkantha-m.jpg";
 import k1 from "./k-1.jpg";
@@ -50,7 +57,20 @@ import hkd3 from "./hkd-3.jpg";
 import hkd4 from "./hkd-4.jpg";
 import hkd5 from "./hkd-5.jpeg";
 
-export const image = { hero, footer, servicebg, contactus, kedarkantha };
+export const image = {
+  hero,
+  footer,
+  servicebg,
+  contactus,
+  kedarkantha,
+  t1,
+  t2,
+  support,
+  guide,
+  compass,
+  about,
+  about1,
+};
 
 export const destinations = [
   {

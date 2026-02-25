@@ -11,19 +11,19 @@ export default function TravelPoint() {
   {/* IMAGE SECTION */}
   <div className="w-full md:w-1/2 flex justify-center relative mb-10 md:mb-0">
     <Image
-      src={image.hero}
+      src={image.t1}
       alt="travel point"
       width={320}
       height={320}
-      className="rounded-full object-cover md:absolute md:top-[-150px]"
+      className="rounded-full object-cover md:absolute md:top-[-250px]"
     />
 
     <Image
-      src={image.hero}
+      src={image.t2}
       alt="travel point"
       width={280}
       height={280}
-      className="rounded-full object-cover border-4 border-white absolute top-30 md:top-0 md:left-20"
+      className="rounded-full object-cover border-4 border-white absolute top-35 md:top-[-50px] md:left-20"
     />
   </div>
 

@@ -5,10 +5,10 @@ import { destinations } from "@/assets/assets";
 
 export default function TopDestinations() {
   return (
-    <main className="px-4 md:px-10">
+    <main className="px-4 md:px-10 mb-5">
       
       {/* Header */}
-      <div className="max-w-7xl mx-auto text-center mb-12">
+      <div className="max-w-7xl mx-auto text-center mb-10">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3 tracking-tight">
           Top Destination
         </h1>
