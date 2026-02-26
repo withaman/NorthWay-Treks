@@ -1,6 +1,11 @@
 import { image } from "@/assets/assets";
 import Image from "next/image";
-import { RiFacebookFill, RiInstagramFill, RiTwitterFill, RiYoutubeFill } from "react-icons/ri";
+import {
+  RiFacebookFill,
+  RiInstagramFill,
+  RiTwitterFill,
+  RiYoutubeFill,
+} from "react-icons/ri";
 
 export default function ContactPage() {
   return (

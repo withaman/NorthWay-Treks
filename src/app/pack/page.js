@@ -1,3 +1,4 @@
+
 import { destinations } from "@/assets/assets";
 import Image from "next/image";
 import Link from "next/link";

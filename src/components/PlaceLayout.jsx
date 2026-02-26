@@ -1,5 +1,4 @@
 'use client'
-import { destinations } from "@/assets/assets"; // adjust path as needed
 import Carousel from "@/components/Carousel";
 import { useState } from "react";
 

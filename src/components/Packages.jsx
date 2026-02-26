@@ -1,13 +1,14 @@
+
 import { destinations } from "@/assets/assets";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Packages() {
   return (
-    <section className="bg-gray-300 p-2 md:p-6 rounded-2xl md:mt-6">
+    <section className="bg-gray-300 p-2 mx-5 md:p-6 rounded-2xl md:mt-8">
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-center mb-10 text-black">
-        <h2 className="text-2xl md:text-3xl font-bold">
+        <h2 className="text-3xl md:text-3xl font-bold">
           Our Packages
         </h2>
         <p className="md:w-96 text-center md:text-left font-semibold text-gray-800/90 mt-2 md:mt-0">

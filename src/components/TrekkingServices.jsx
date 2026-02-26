@@ -1,6 +1,7 @@
-import { image, trekkingServices } from '@/assets/assets'
+
 import React from 'react'
 import Image from "next/image";
+import { image, trekkingServices } from '@/assets/assets';
 
 export default function TrekkingServices() {
   return (

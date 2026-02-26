@@ -1,3 +1,4 @@
+
 import { image } from '@/assets/assets';
 import Image from 'next/image';
 import React from 'react'
@@ -5,7 +6,7 @@ import { RiFacebookCircleFill, RiInstagramFill, RiWhatsappFill } from "react-ico
 
 export default function WhyChooseUs() {
     return (
-        <div className='flex flex-col md:flex-row justify-center lg:px-20 mt-10'>
+        <div className='flex flex-col md:flex-row justify-center px-10 lg:px-20 mt-10'>
             <div className='w-full md:w-3/4 mb-3'>
                 <h2 className='text-3xl font-semibold'>Why Thousands of Travelers Choose <br className='hidden md:block' /><span className='font-bold text-red-600'>NORTHWAY TREKS</span> for Their Extreme Adventures.</h2>
                 <p className='my-3 text-justify w-full md:w-[700px] italic leading-8 text-gray-700'>From breathtaking trails to personalized support, <span className='font-semibold text-red-600'>NORTHWAY TREKS</span> delivers adventure with trust, comfort, and memories that last a lifetime.With experienced local guides, carefully planned routes, top-quality safety standards, and a deep love for the mountains, we ensure every trek is thrilling yet reliable.</p>

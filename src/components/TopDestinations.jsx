@@ -3,10 +3,11 @@ import Image from "next/image";
 import { destinations } from "@/assets/assets";
 
 
+
 export default function TopDestinations() {
   return (
     <main className="px-4 md:px-10 mb-5">
-      
+
       {/* Header */}
       <div className="max-w-7xl mx-auto text-center mb-10">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3 tracking-tight">
@@ -21,7 +22,7 @@ export default function TopDestinations() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-4 auto-rows-[200px]">
 
         {destinations.slice(0, 6).map((item, index) => {
-          
+
           // Keep same grid styling pattern
           const gridClasses = [
             "md:col-span-3",

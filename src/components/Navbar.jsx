@@ -12,7 +12,7 @@ export default function Navbar() {
     return (
         <>
             {/* NAVBAR */}
-            <header className="fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-md">
+            <header className="fixed top-0 left-0 w-full z-50 bg-black/15 backdrop-blur-sm text-white">
                 <div className="flex justify-between items-center px-6 py-4">
                     {/* Logo */}
                     <div className="text-xl font-bold">NorthWay Treks</div>
@@ -25,7 +25,7 @@ export default function Navbar() {
                     </ul>
 
                     {/* Desktop Button */}
-                    <div className="hidden md:block font-semibold border rounded-2xl px-4 py-1 bg-black text-white cursor-pointer">
+                    <div className="hidden md:block font-semibold rounded-2xl px-4 py-1 bg-gradient-to-r from-[#C238CC] to-[#F5576E] text-white cursor-pointer hover:shadow-[0_0_20px_rgba(194,56,204,0.6)] hover:shadow-lg hover:scale-[1.05] hover:-translate-y-[2px] transition-all duration-300 ease-out active:scale-[0.98]">
                         Book Now
                     </div>
 
@@ -41,11 +41,11 @@ export default function Navbar() {
 
             {/* MOBILE FULL SCREEN MENU */}
             <div
-                className={`fixed inset-0 z-50 bg-white transform transition-transform duration-300 ease-in-out 
+                className={`fixed inset-0 z-50 bg-white/10 backdrop-blur-xl transform transition-transform duration-300 ease-in-out 
                 ${open ? "translate-x-0" : "translate-x-full"}`}
             >
                 {/* Close Button */}
-                <div className="flex justify-between items-center px-6 py-4 border-b">
+                <div className="flex justify-between items-center px-6 py-4 border-b text-white">
                     <div className="text-xl font-bold">Menu</div>
                     <button
                         onClick={() => setOpen(false)}
@@ -56,22 +56,20 @@ export default function Navbar() {
                 </div>
 
                 {/* Menu Links */}
-                <ul className="flex flex-col items-center justify-center gap-6 h-[80vh] text-xl font-semibold">
+                <ul className="flex flex-col text-white items-center justify-center gap-6 h-[80vh] text-xl font-semibold ">
                     <li><Link onClick={() => setOpen(false)} href="/">Home</Link></li>
                     <li><Link onClick={() => setOpen(false)} href="/pack">Packages</Link></li>
                     <li><Link onClick={() => setOpen(false)} href="/about">About Us</Link></li>
                     <li><Link onClick={() => setOpen(false)} href="/contact">Contact</Link></li>
 
                     <li className="pt-4">
-                        <button className="bg-black text-white px-8 py-3 rounded-2xl">
+                        <button className="bg-gradient-to-r from-[#C238CC] to-[#F5576E] px-8 py-3 rounded-2xl">
                             Sign Up
                         </button>
                     </li>
                 </ul>
             </div>
 
-            {/* Spacer so content doesn’t hide behind fixed navbar */}
-            <div className="h-[60px]" />
         </>
     );
 }

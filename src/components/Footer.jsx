@@ -1,3 +1,4 @@
+
 import { image } from '@/assets/assets'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -11,7 +12,7 @@ import {
 export default function Footer() {
   return (
     <footer className="relative w-full min-h-[10vh] flex items-center">
-      
+
       {/* Background Image */}
       <Image
         src={image.footer}
@@ -44,7 +45,7 @@ export default function Footer() {
         </div>
 
         <div className='flex flex-col sm:flex-row gap-10 md:gap-16'>
-          
+
           {/* Quick Links */}
           <div className="flex flex-col gap-4">
             <h3 className="text-md font-semibold">Quick Links</h3>

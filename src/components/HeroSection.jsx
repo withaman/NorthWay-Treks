@@ -1,43 +1,48 @@
-"user client"
-import React from 'react'
-import { image } from "../assets/assets.js"
-import Image from 'next/image'
+"use client"
+import React from "react";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full py-4">
-      <div className="relative w-full min-h-[100vh] lg:min-h-[85vh] rounded-3xl overflow-hidden">
-        <Image
-          alt="hero section"
-          src={image.hero}
-          fill
-          priority
-          className="object-cover"
-        />
-        {/* Overlay */}
-        <div className="relative flex flex-col lg:flex-row bg-black/30 text-white min-h-[100vh] lg:min-h-[85vh]">
-          {/* LEFT CONTENT */}
-          <div className="w-full lg:w-2/3 flex flex-col justify-center px-4 py-10 lg:py-0">
-            <h1 className="text-6xl sm:text-6xl lg:text-7xl font-black tracking-tighter mb-4">
-              Trek the Himalayas. Discover Your Limits.
-            </h1>
+    <section className="relative w-full h-screen overflow-hidden">
 
-            <p className="max-w-md text-base sm:text-lg mb-8 italic font-semibold">
-              Discover breathtaking Himalayan destinations through expertly curated trekking tours. Explore scenic trails, remote villages, and iconic Himalayan landscapes across Uttarakhand with experienced local guides...
-            </p>
+      {/* Background Video */}
+      <video
+        src="/video/herovid.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      />
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-white text-black px-6 py-3 rounded-full font-medium">
-                Plan Your Trip
-              </button>
-              <button className="bg-white/20 backdrop-blur-md border border-white px-6 py-3 rounded-full font-medium">
-                Explore Destinations
-              </button>
-            </div>
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/40 z-10" />
+
+      {/* Content */}
+      <div className="relative z-20 flex flex-col lg:flex-row h-full text-white mt-10">
+
+        {/* LEFT CONTENT */}
+        <div className="w-full lg:w-2/3 flex flex-col justify-center px-6 lg:px-20">
+          <h1 className="text-6xl sm:text-6xl lg:text-7xl font-black tracking-tight mb-6 mt-12 lg:mt-0">
+            Trek the Himalayas, Discover Your Limits.
+          </h1>
+
+          <p className="max-w-lg text-base sm:text-lg mb-8">
+            Discover breathtaking Himalayan destinations through expertly curated trekking tours.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4">
+            <button className="bg-white text-black px-6 py-3 rounded-full font-medium">
+              Plan Your Trip
+            </button>
+            <button className="bg-white/20 backdrop-blur-md border border-white px-6 py-3 rounded-full font-medium">
+              Explore Destinations
+            </button>
           </div>
+        </div>
 
-          {/* RIGHT FORM */}
-          <div className="w-full lg:w-1/3 flex justify-center items-center px-4 pb-10 lg:pb-0">
+        {/* RIGHT FORM */}
+          <div className="w-full lg:w-1/3 flex justify-center items-center px-4 pb-10 lg:pb-0 mt-10 sm:mt-0">
             <form
               className="
       w-full max-w-md
@@ -108,8 +113,8 @@ export default function HeroSection() {
               </button>
             </form>
           </div>
-        </div>
+
       </div>
     </section>
-  )
+  );
 }
