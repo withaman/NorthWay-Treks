@@ -33,7 +33,7 @@ export default function Carousel({ images = [] }) {
 
   return (
     <div className="relative w-full">
-      <div className="relative h-56 md:h-96 overflow-hidden rounded-2xl">
+      <div className="relative h-80 md:h-100 overflow-hidden">
         {slicedImages.map((img, index) => (
           <div
             key={index}

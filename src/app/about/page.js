@@ -8,7 +8,7 @@ export default function About() {
   return (
     <div className="w-full bg-gray-50">
       {/* ================= HERO SECTION ================= */}
-      <section className="relative w-full min-h-[70vh] flex items-center justify-center text-center text-white overflow-hidden -mt-6">
+      <section className="relative w-full min-h-[80vh] flex items-center justify-center text-center text-white overflow-hidden">
         {/* Background Image */}
         <Image
           src={image.about}
@@ -129,27 +129,12 @@ export default function About() {
           </p>
 
           {/* Team Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {[
               {
                 name: "Aman Rawat",
                 role: "Founder & Trek Leader",
                 image: "/team1.jpg",
-              },
-              {
-                name: "Riya Sharma",
-                role: "Operations Manager",
-                image: "/team2.jpg",
-              },
-              {
-                name: "Vikram Singh",
-                role: "Mountain Guide",
-                image: "/team3.jpg",
-              },
-              {
-                name: "Neha Joshi",
-                role: "Customer Support",
-                image: "/team4.jpg",
               },
             ].map((member, index) => (
               <div
@@ -157,7 +142,7 @@ export default function About() {
                 className="group bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300"
               >
                 {/* Image */}
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-50 w-60 overflow-hidden">
                   <img
                     src={member.image}
                     alt={member.name}
@@ -166,7 +151,7 @@ export default function About() {
                 </div>
 
                 {/* Info */}
-                <div className="p-6">
+                <div className="p-1">
                   <h3 className="text-lg font-semibold text-gray-800">
                     {member.name}
                   </h3>

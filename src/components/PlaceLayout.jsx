@@ -11,12 +11,13 @@ export default function PlaceLayout({ trekInfo }) {
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-4 py-5">
+    <section className="pb-5">
       {/* Carousel */}
       <Carousel images={trekInfo.image} />
 
+      <div className="px-2 md:px-8">
       {/* Header */}
-      <div className="mt-6 bg-amber-500 rounded-lg px-4 py-2">
+      <div className="mt-6 bg-yellow-300 rounded-lg px-4 py-2">
         <h1 className="text-3xl font-bold">{trekInfo.title}</h1>
         <p className="text-gray-500 mt-1">{trekInfo.subtitle}</p>
 
@@ -132,7 +133,7 @@ export default function PlaceLayout({ trekInfo }) {
                 <span className="text-yellow-500"> Terms of Service</span>.
               </p>
               <button type="submit" className="bg-black text-white py-3 rounded-full font-semibold hover:opacity-90 transition">
-                Check Availability
+                Book Now
               </button>
             </form>
           </div>
@@ -154,6 +155,8 @@ export default function PlaceLayout({ trekInfo }) {
           ))}
         </div>
       </section>
+
+      </div>
     </section>
   );
 }
