@@ -3,7 +3,7 @@ import React from "react";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full h-screen overflow-hidden">
+    <section className="relative w-full h-screen overflow-hidden md:overflow-visible">
 
       {/* Background Video */}
       <video
@@ -19,7 +19,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-black/40 z-10" />
 
       {/* Content */}
-      <div className="relative z-20 flex flex-col lg:flex-row h-full text-white mt-10">
+      <div className="relative z-20 flex flex-col lg:flex-row h-full text-white mt-10 overflow-y-auto md:overflow-visible scroll-smooth">
 
         {/* LEFT CONTENT */}
         <div className="w-full lg:w-2/3 flex flex-col justify-center px-6 lg:px-20">
@@ -32,7 +32,7 @@ export default function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-white text-black px-6 py-3 rounded-full font-medium">
+            <button className="bg-white text-black px-6 btn-cta py-3 rounded-full font-medium">
               Plan Your Trip
             </button>
             <button className="bg-white/20 backdrop-blur-md border border-white px-6 py-3 rounded-full font-medium">
@@ -42,7 +42,7 @@ export default function HeroSection() {
         </div>
 
         {/* RIGHT FORM */}
-          <div className="w-full lg:w-1/3 flex justify-center items-center px-4 pb-10 lg:pb-0 mt-10 sm:mt-0">
+          <div className="w-full lg:w-1/3 flex justify-center items-center px-4 pb-10 lg:pb-0 mt-10 sm:mt-0 mb-5">
             <form
               className="
       w-full max-w-md
@@ -105,7 +105,7 @@ export default function HeroSection() {
         backdrop-blur-md
         border border-white/30
 
-        hover:bg-white/30
+        hover:bg-[#fd8925]
         transition-all duration-300
       "
               >

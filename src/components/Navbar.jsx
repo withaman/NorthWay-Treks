@@ -17,7 +17,7 @@ export default function Navbar() {
                     {/* Logo */}
                     <div className="text-xl font-bold">NorthWay Treks</div>
                     {/* Desktop Menu */}
-                    <ul className="hidden md:flex mr-[3rem] gap-6 font-semibold">
+                    <ul className="hidden md:flex mr-[3rem] gap-6 text-sm">
                         <li><Link href="/" className={navLink}>Home</Link></li>
                         <li><Link href="/pack" className={navLink}>Packages</Link></li>
                         <li><Link href="/about" className={navLink}>About Us</Link></li>
@@ -25,7 +25,7 @@ export default function Navbar() {
                     </ul>
 
                     {/* Desktop Button */}
-                    <div className="hidden md:block font-semibold rounded-2xl px-4 py-1 bg-gradient-to-r from-[#C238CC] to-[#F5576E] text-white cursor-pointer hover:shadow-[0_0_20px_rgba(194,56,204,0.6)] hover:shadow-lg hover:scale-[1.05] hover:-translate-y-[2px] transition-all duration-300 ease-out active:scale-[0.98]">
+                    <div className="hidden md:block font-semibold rounded-2xl px-4 py-1 btn-cta text-white cursor-pointer hover:shadow-[0_0_20px_rgba(194,56,204,0.6)] hover:shadow-lg hover:scale-[1.05] hover:-translate-y-[2px] transition-all duration-300 ease-out active:scale-[0.98] border-[1px]">
                         Book Now
                     </div>
 
@@ -63,7 +63,7 @@ export default function Navbar() {
                     <li><Link onClick={() => setOpen(false)} href="/contact">Contact</Link></li>
 
                     <li className="pt-4">
-                        <button className="bg-gradient-to-r from-[#C238CC] to-[#F5576E] px-8 py-3 rounded-2xl">
+                        <button className="btn-cta px-8 py-3 rounded-2xl">
                             Sign Up
                         </button>
                     </li>

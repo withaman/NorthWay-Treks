@@ -13,7 +13,7 @@ function WhatsappIcon() {
   className="fixed bottom-5 right-5 z-[100] bg-[#25D366] hover:bg-[#1ebe5d] px-4 py-3 rounded-full shadow-lg transition"
 >
       {/* WhatsApp Icon (Font Awesome) */}
-      <i className="fa-brands fa-whatsapp text-white text-4xl"></i>
+      <i className="fa-brands fa-whatsapp text-white text-2xl"></i>
     </a>
   );
 }

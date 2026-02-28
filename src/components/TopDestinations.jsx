@@ -6,7 +6,7 @@ import { destinations } from "@/assets/assets";
 
 export default function TopDestinations() {
   return (
-    <main className="px-4 md:px-10 mb-5">
+    <main className="px-4 md:px-10 my-5">
 
       {/* Header */}
       <div className="max-w-7xl mx-auto text-center mb-10">

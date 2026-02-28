@@ -13,3 +13,35 @@
 ::-webkit-scrollbar {
   display: none;
 }
+
+.btn-cta {
+  --gradient-glow-x: 100%;
+  --gradient-glow-y: 50%;
+
+  position: relative;
+  overflow: hidden;
+  color: white;
+
+  /* Base gradient (main button color) */
+  background:
+    linear-gradient(45deg, #ff0c00 0%, #fd8925 60%, #ff9b26 100%);
+
+  transition: 0.45s ease;
+}
+
+.btn-cta::before {
+  content: "";
+  position: relative;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      5rem 80% at var(--gradient-glow-x) var(--gradient-glow-y),
+      rgba(255,255,255,0.9),
+      rgba(255,155,38,0.6) 60%,
+      transparent 100%
+    );
+
+  transition: 0.45s ease;
+}

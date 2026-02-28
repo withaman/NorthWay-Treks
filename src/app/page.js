@@ -1,6 +1,7 @@
 import FaqsPage from "@/components/FaqsPage";
 import HeroSection from "@/components/HeroSection";
 import Packages from "@/components/Packages";
+import Reviews from "@/components/Reviews";
 import TopDestinations from "@/components/TopDestinations";
 import TravelPoint from "@/components/TravelPoint";
 import TrekkingServices from "@/components/TrekkingServices";
@@ -16,6 +17,7 @@ export default function Home() {
         <TravelPoint />
         <Packages />
         <WhyChooseUs />
+        <Reviews />
         <FaqsPage />
     </div>
   );

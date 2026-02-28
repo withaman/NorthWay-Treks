@@ -24,7 +24,7 @@ export default function FaqsPage() {
               onClick={() =>
                 setOpenIndex(openIndex === index ? null : index)
               }
-              className="w-full md:w-[45rem] flex justify-between items-center px-5 py-4 text-left text-gray-800 font-medium hover:bg-orange-400 transition hover:text-black"
+              className="w-full md:w-[45rem] flex justify-between items-center px-5 py-4 text-left text-gray-800 font-medium hover:bg-[#ff6600] transition hover:text-black"
             >
               {faq.question}
               <span className="text-gray-600 text-xl">

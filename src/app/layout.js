@@ -1,22 +1,12 @@
-import { Geist, Geist_Mono,Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsappIcon from "@/components/WhatsappIcon";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
 });
 
 export const metadata = {
@@ -40,7 +30,7 @@ export default function RootLayout({ children }) {
 
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable}, ${poppins.className} antialiased`}
+        className={`${poppins.className} antialiased`}
       >
         <Navbar />
         {children}

@@ -1,3 +1,5 @@
+import PlanTripForm from "@/components/PlanTripForm";
+
 export default function TrailsPage() {
   return (
     <div className="p-10">
