@@ -23,7 +23,7 @@ export default function PackPage() {
 
         {/* Left Content */}
         <div>
-          <h2 className="text-2xl md:text-3xl font-bold">
+          <h2 className="text-2xl md:text-3xl font-bold text-center md:text-left">
             Our Packages
           </h2>
           <p className="md:w-96 text-center md:text-left font-medium text-gray-700 mt-2">

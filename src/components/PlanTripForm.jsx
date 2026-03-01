@@ -1,8 +1,9 @@
 "use client";
 import { useState } from "react";
 
-export default function PlanSection() {
+export default function PlanTripForm() {
   const [travelers, setTravelers] = useState(1);
+ 
 
   const increase = () => {
     setTravelers((prev) => prev + 1);
@@ -14,7 +15,7 @@ export default function PlanSection() {
 
   return (
     <section className="min-h-screenflex items-center justify-center">
-      <div className="w-full max-w-6xl bg-white rounded-3xl shadow-2xl p-6 sm:p-10 flex flex-col-reverse flex-col lg:flex-row gap-10">
+      <div className="w-full max-w-6xl bg-white rounded-3xl shadow-2xl p-6 sm:p-10 flex flex-col-reverse flex-col lg:flex-row gap-10 mt-15">
 
         {/* LEFT SIDE */}
         <div className="lg:w-1/3 flex flex-col justify-center">
@@ -38,7 +39,7 @@ export default function PlanSection() {
         </div>
 
         {/* RIGHT SIDE FORM */}
-        <div className="lg:w-2/3 sm:bg-gray-50 rounded-2xl sm:shadow-xl sm:p-8">
+        <div className="lg:w-2/3 sm:bg-gray-50 rounded-2xl sm:shadow-xl sm:p-8 text-black">
           <form className="space-y-6">
 
             {/* Personal Info */}
