@@ -123,7 +123,7 @@ export default function ContactPage() {
       onSubmit={handleSubmit}
       className="bg-gray-100 rounded-xl shadow-xl p-6 space-y-4 gap-5"
     >
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
         <input
         name="name"
         value={formData.name}
