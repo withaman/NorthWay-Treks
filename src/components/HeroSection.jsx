@@ -2,9 +2,39 @@
 import React, { useState } from "react";
 import PlanTripForm from "./PlanTripForm";
 import Link from "next/link";
+import { sendToWhatsApp } from "@/utils/sendToWhatsapp";
 
 export default function HeroSection() {
   const [openForm, setOpenForm] = useState(false);
+
+  const [formData, setFormData] = useState({
+  name: "",
+  email: "",
+  mobile: "",
+  message: "",
+});
+
+const handleChange = (e) => {
+  setFormData({
+    ...formData,
+    [e.target.name]: e.target.value,
+  });
+};
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  sendToWhatsApp(
+    "918979735791", // your number 918979735791
+    "📩 Travel Inquiry",
+    {
+      Name: formData.name,
+      Email: formData.email,
+      Mobile: formData.mobile,
+      Message: formData.message,
+    }
+  );
+};
   return (
     <section className="relative w-full h-screen overflow-hidden md:overflow-visible">
 
@@ -37,7 +67,7 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4">
             <button
               onClick={() => setOpenForm(true)}
-              className="bg-white text-black px-6 btn-cta py-3 rounded-full font-medium">
+              className="bg-white text-black px-6 btn-cta py-3 rounded-full font-medium cursor-pointer">
               Plan Your Trip
             </button>
             {/* Modal */}
@@ -55,7 +85,7 @@ export default function HeroSection() {
                   {/* Close Button */}
                   <button
                     onClick={() => setOpenForm(false)}
-                    className="absolute top-4 right-4 text-xl font-bold text-gray-600 hover:text-black top-17 right-7"
+                    className="absolute top-4 right-4 text-xl font-bold text-gray-600 hover:text-black top-17 right-6"
                   >
                     ✕
                   </button>
@@ -74,6 +104,7 @@ export default function HeroSection() {
         {/* RIGHT FORM */}
         <div className="w-full lg:w-1/3 flex justify-center items-center px-4 pb-10 lg:pb-0 mt-10 sm:mt-0 mb-5">
           <form
+          onSubmit={handleSubmit}
             className="
       w-full max-w-md
       flex flex-col gap-3
@@ -94,24 +125,32 @@ export default function HeroSection() {
             {/* Inputs */}
             <input
               type="text"
+              name="name"
+              onChange={handleChange}
               placeholder="Name"
               className="glass-input border p-2 rounded-full"
             />
 
             <input
               type="email"
+              name="email"
+              onChange={handleChange}
               placeholder="Email"
               className="glass-input border p-2 rounded-full"
             />
 
             <input
               type="text"
+              name="mobile"
+              onChange={handleChange}
               placeholder="Mobile"
               className="glass-input border p-2 rounded-full"
             />
 
             <textarea
               placeholder="Message"
+              name="message"
+              onChange={handleChange}
               rows={3}
               className="glass-input resize-none border p-2 rounded-xl"
             />
@@ -124,6 +163,7 @@ export default function HeroSection() {
 
             {/* Button */}
             <button
+            type="submit"
               className="
         mt-2
         rounded-full

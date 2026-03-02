@@ -1,9 +1,46 @@
 "use client";
+import { sendToWhatsApp } from "@/utils/sendToWhatsapp";
 import { useState } from "react";
 
 export default function PlanTripForm() {
   const [travelers, setTravelers] = useState(1);
- 
+  const [formData, setFormData] = useState({
+  fullName: "",
+  email: "",
+  mobile: "",
+  destination: "",
+  tripType: "",
+  travelDate: "",
+  budget: "",
+  specialRequest: "",
+});
+
+const handleChange = (e) => {
+  setFormData({
+    ...formData,
+    [e.target.name]: e.target.value,
+  });
+};
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  sendToWhatsApp(
+    "918979735791", // replace with your number
+    "🌄 New Himalayan Trip Inquiry",
+    {
+      Name: formData.fullName,
+      Email: formData.email,
+      Mobile: formData.mobile,
+      Destination: formData.destination,
+      TripType: formData.tripType,
+      TravelDate: formData.travelDate,
+      Travelers: travelers,
+      Budget: formData.budget,
+      SpecialRequest: formData.specialRequest,
+    }
+  );
+};
 
   const increase = () => {
     setTravelers((prev) => prev + 1);
@@ -40,7 +77,7 @@ export default function PlanTripForm() {
 
         {/* RIGHT SIDE FORM */}
         <div className="lg:w-2/3 sm:bg-gray-50 rounded-2xl sm:shadow-xl sm:p-8 text-black">
-          <form className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
 
             {/* Personal Info */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -50,9 +87,11 @@ export default function PlanTripForm() {
                   Full Name
                 </label>
                 <input
-                  type="text"
-                  className="w-full border p-2 rounded-full focus:ring-2 focus:ring-orange-400 outline-none"
-                />
+  type="text"
+  name="fullName"
+  onChange={handleChange}
+  className="w-full border p-2 rounded-full focus:ring-2 focus:ring-orange-400 outline-none"
+/>
               </div>
 
               <div>
@@ -60,9 +99,11 @@ export default function PlanTripForm() {
                   Email Address
                 </label>
                 <input
-                  type="email"
-                  className="w-full border p-2 rounded-full focus:ring-2 focus:ring-orange-400 outline-none"
-                />
+  type="email"
+  name="email"
+  onChange={handleChange}
+  className="w-full border p-2 rounded-full focus:ring-2 focus:ring-orange-400 outline-none"
+/>
               </div>
 
               <div>
@@ -70,9 +111,11 @@ export default function PlanTripForm() {
                   Mobile Number
                 </label>
                 <input
-                  type="tel"
-                  className="w-full border p-2 rounded-full focus:ring-2 focus:ring-orange-400 outline-none"
-                />
+  type="tel"
+  name="mobile"
+  onChange={handleChange}
+  className="w-full border p-2 rounded-full focus:ring-2 focus:ring-orange-400 outline-none"
+/>
               </div>
             </div>
 
@@ -83,7 +126,11 @@ export default function PlanTripForm() {
                 <label className="block text-sm font-medium mb-1">
                   Destination
                 </label>
-                <select className="w-full border p-2 rounded-full focus:ring-2 focus:ring-orange-400 outline-none">
+                <select
+  name="destination"
+  onChange={handleChange}
+  className="w-full border p-2 rounded-full focus:ring-2 focus:ring-orange-400 outline-none"
+>
                   <option value="">Select Destination</option>
                   <option>Kedarnath Trek</option>
                   <option>Hampta Pass</option>
@@ -97,7 +144,11 @@ export default function PlanTripForm() {
                 <label className="block text-sm font-medium mb-1">
                   Trip Type
                 </label>
-                <select className="w-full border p-2 rounded-full focus:ring-2 focus:ring-orange-400 outline-none">
+                <select
+  name="tripType"
+  onChange={handleChange}
+  className="w-full border p-2 rounded-full focus:ring-2 focus:ring-orange-400 outline-none"
+>
                   <option value="">Select Trip Type</option>
                   <option>Adventure Trek</option>
                   <option>Family Tour</option>
@@ -111,9 +162,11 @@ export default function PlanTripForm() {
                   Travel Date
                 </label>
                 <input
-                  type="date"
-                  className="w-full border p-2 rounded-full focus:ring-2 focus:ring-orange-400 outline-none"
-                />
+  type="date"
+  name="travelDate"
+  onChange={handleChange}
+  className="w-full border p-2 rounded-full focus:ring-2 focus:ring-orange-400 outline-none"
+/>
               </div>
 
               <div>
@@ -153,9 +206,11 @@ export default function PlanTripForm() {
                   Approx Budget (Optional)
                 </label>
                 <input
-                  type="text"
-                  className="w-full border p-2 rounded-full focus:ring-2 focus:ring-orange-400 outline-none"
-                />
+  type="text"
+  name="budget"
+  onChange={handleChange}
+  className="w-full border p-2 rounded-full focus:ring-2 focus:ring-orange-400 outline-none"
+/>
               </div>
 
               <div className="md:col-span-3">
@@ -163,15 +218,18 @@ export default function PlanTripForm() {
                   Special Requests
                 </label>
                 <textarea
-                  rows={4}
-                  className="w-full border p-3 rounded-xl focus:ring-2 focus:ring-orange-400 outline-none resize-none"
-                />
+  rows={4}
+  name="specialRequest"
+  onChange={handleChange}
+  className="w-full border p-3 rounded-xl focus:ring-2 focus:ring-orange-400 outline-none resize-none"
+/>
               </div>
 
             </div>
 
             {/* Submit */}
             <button
+            type="submit"
               className="
                 w-full
                 btn-cta
