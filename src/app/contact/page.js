@@ -123,11 +123,12 @@ export default function ContactPage() {
       onSubmit={handleSubmit}
       className="bg-gray-100 rounded-xl shadow-xl p-6 space-y-4 gap-5"
     >
-      <input
+      <div className="grid grid-cols-2 gap-2">
+        <input
         name="name"
         value={formData.name}
         onChange={handleChange}
-        className="input outline-none border rounded-2xl p-1 mr-5"
+        className="input outline-none border rounded-2xl p-1"
         placeholder="Full Name"
         required
       />
@@ -141,6 +142,7 @@ export default function ContactPage() {
         placeholder="Email"
         required
       />
+      </div>
 
       <select
         name="tour"
