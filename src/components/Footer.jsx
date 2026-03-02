@@ -11,9 +11,9 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="relative w-full min-h-[10vh] flex items-center">
+    <footer className="relative w-full min-h-[10vh] flex items-center btn-cta">
 
-      {/* Background Image */}
+      {/* Background Image
       <Image
         src={image.footer}
         alt="Northway Treks"
@@ -22,8 +22,8 @@ export default function Footer() {
         className="object-cover"
       />
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/60"></div>
+      {/* Overlay /}
+      <div className="absolute inset-0 bg-black/60"></div> */}
 
       {/* Content */}
       <div className="relative z-10 flex flex-col md:flex-row w-full 
@@ -35,12 +35,11 @@ export default function Footer() {
 
         {/* Brand Section */}
         <div className="flex flex-col gap-3 max-w-sm">
-          <h1 className="text-2xl md:text-3xl font-semibold">
+          <h1 className="text-2xl md:text-3xl font-semibold text-black">
             NorthWay Treks
           </h1>
           <p className="italic text-sm md:text-md leading-relaxed">
-            Every trail with Northway Treks is a journey into nature, culture,
-            and unforgettable Himalayan memories.
+            Every trail with Northway Treks is more than just a journey — it’s a complete Uttarakhand trekking experience in the heart of the Indian Himalayas, where untouched nature, vibrant mountain culture, and breathtaking landscapes come together to create unforgettable memories.
           </p>
         </div>
 
@@ -48,7 +47,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="flex flex-col gap-4">
-            <h3 className="text-md font-semibold">Quick Links</h3>
+            <h3 className="text-md font-semibold text-black">Quick Links</h3>
             <ul className="flex flex-col gap-3 text-sm">
               <li><Link href="/" className="hover:text-gray-300">Home</Link></li>
               <li><Link href="/pack" className="hover:text-gray-300">Packages</Link></li>
@@ -59,15 +58,15 @@ export default function Footer() {
 
           {/* Contact Section */}
           <div className="flex flex-col gap-4">
-            <h3 className="text-md font-semibold">Contact</h3>
+            <h3 className="text-md font-semibold text-black">Contact</h3>
 
             <ul className="flex flex-col gap-4 text-sm">
 
               {/* Phone */}
               <li className="flex items-center gap-3">
                 <RiCellphoneFill className="text-lg md:text-xl" />
-                <a href="tel:+91994903093" className="hover:text-gray-300">
-                  +91 99490 3093
+                <a href="tel:+918979735791" className="hover:text-gray-300">
+                  +918979735791
                 </a>
               </li>
 
@@ -75,7 +74,7 @@ export default function Footer() {
               <li className="flex items-center gap-3">
                 <RiMailFill className="text-lg md:text-xl" />
                 <a
-                  href="mailto:northwaytrek@gmail.com"
+                  href="mailto:northwaytreks@gmail.com"
                   className="hover:text-gray-300"
                 >
                   northwaytrek@gmail.com
@@ -91,7 +90,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-gray-300"
                 >
-                  @northwaytrek
+                  @northwaytreks
                 </a>
               </li>
 

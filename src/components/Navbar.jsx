@@ -15,7 +15,7 @@ export default function Navbar() {
             <header className="fixed top-0 left-0 w-full z-50 bg-black/15 backdrop-blur-sm text-white">
                 <div className="flex justify-between items-center px-6 py-4">
                     {/* Logo */}
-                    <div className="text-xl font-bold">NorthWay Treks</div>
+                    <Link href="/" className="text-xl font-bold">NorthWay Treks</Link>
                     {/* Desktop Menu */}
                     <ul className="hidden md:flex mr-[3rem] gap-6 text-sm">
                         <li><Link href="/" className={navLink}>Home</Link></li>

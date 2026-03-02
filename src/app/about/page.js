@@ -132,7 +132,7 @@ export default function About() {
           <div className="flex flex-wrap justify-center gap-8">
             {[
               {
-                name: "Aman Rawat",
+                name: "Anuj Rawat",
                 role: "Founder & Trek Leader",
                 image: "/team1.jpg",
               },

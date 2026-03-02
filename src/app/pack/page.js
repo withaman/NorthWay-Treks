@@ -69,7 +69,7 @@ export default function PackPage() {
 
               {/* Price */}
               <span className="absolute top-3 right-3 bg-white text-xs px-3 py-1 rounded-full font-semibold shadow">
-                Starts at ₹{item.price}
+                Starts at {item.price}
               </span>
 
               {/* Overlay */}
@@ -83,7 +83,7 @@ export default function PackPage() {
 
                 <div className="flex items-center justify-between mt-2 text-sm">
                   <span>
-                    ⭐ {item.rating} ({item.reviews})
+                    ⭐ {item.rating} {item.reviews}
                   </span>
                   <span className="text-xs text-gray-300">
                     📍 {item.location}

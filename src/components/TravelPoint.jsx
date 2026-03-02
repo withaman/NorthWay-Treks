@@ -20,7 +20,7 @@ export default function TravelPoint() {
         />
 
         <Image
-          src={image.t2}
+          src={image.hike}
           alt="travel point"
           width={280}
           height={280}

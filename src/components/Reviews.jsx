@@ -31,7 +31,7 @@ const reviews = [
 
 export default function Reviews() {
     return (
-        <section className="py-16 px-6 md:px-16 mx-6 rounded-2xl btn-cta">
+        <section className="py-8 md:py-16 px-6 md:px-16 mx-6 rounded-2xl btn-cta">
 
             {/* Top Heading */}
             <div className="text-center mb-12">
@@ -40,7 +40,7 @@ export default function Reviews() {
                     <span className="block font-bold">travel with confidence.</span>
                 </h2>
 
-                <div className="flex items-center justify-center gap-2 mt-4 text-gray-600">
+                <div className="flex flex-col md:flex-row items-center justify-center gap-2 mt-4 text-gray-600">
                     <span className="font-medium">4.8/5</span>
                     <span className="text-green-500 font-semibold">★★★★★</span>
                     <span>Based on 1200+ reviews</span>
@@ -51,9 +51,9 @@ export default function Reviews() {
             <div className="grid md:grid-cols-4 gap-8 items-start">
 
                 {/* Left Side */}
-                <div className="md:col-span-1">
-                    <div className="text-9xl text-gray-300 font-bold md:translate-y-[4rem]">"</div>
-                    <h3 className="text-3xl font-semibold">
+                <div className="flex flex-row md:flex-col md:col-span-1">
+                    <div className="text-5xl md:text-9xl text-gray-300 font-bold md:translate-y-[4rem]">"</div>
+                    <h3 className="text-3xl font-semibold text-black">
                         What our travelers are saying
                     </h3>
                 </div>

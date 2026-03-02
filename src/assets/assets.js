@@ -9,6 +9,7 @@ import guide from "./guide.jpg";
 import compass from "./compass.jpg";
 import about from "./about.jpg";
 import about1 from "./about1.jpg";
+import hike from "./hike.jpg";
 
 import kedarkantha from "./kedarkantha-m.jpg";
 import k1 from "./k-1.jpg";
@@ -57,6 +58,18 @@ import hkd3 from "./hkd-3.jpg";
 import hkd4 from "./hkd-4.jpg";
 import hkd5 from "./hkd-5.jpeg";
 
+import mussoorie from "./mussoorie.jpg";
+import mussoorie2 from "./mussoorie2.jpg";
+import kemptyfalls from "./kemptyfall.jpg";
+import gunhill from "./gunhill.jpg";
+import laltibba from "./labtibba.jpg";
+import camelsbackroad from "./camelsback.jpg";
+import cloudsEnd from "./cloudends.jpg";
+import companyGarden from "./companygarden.jpg";
+import georgeEverest from "./georgeeverest.jpg";
+import jharipaniFalls from "./jharipani.jpg";
+
+
 export const image = {
   hero,
   footer,
@@ -70,6 +83,7 @@ export const image = {
   compass,
   about,
   about1,
+  hike,
 };
 
 export const destinations = [
@@ -230,6 +244,297 @@ export const destinations = [
       {
         question: "Is accommodation included?",
         answer: "Yes, accommodation and meals are included as per package.",
+      },
+    ],
+  },
+  {
+  id: "mussoorie-tour",
+  title: "Mussoorie",
+  subtitle: "Queen of the Hills Experience",
+  price: "₹7,999",
+  rating: "4.7 (8.5k)",
+  location: "Mussoorie - Uttarakhand",
+  duration: "3 Days / 2 Nights",
+  altitude: "6,578 ft",
+  difficulty: "Easy",
+  startingPoint: "Delhi / Dehradun",
+
+  bestSeason: ["March", "April", "May", "June", "September", "October"],
+  trekType: ["Hill Station Tour", "Family Trip", "Romantic Getaway"],
+
+  image: [
+    mussoorie,
+    mussoorie2,
+    about1,
+    laltibba,
+    camelsbackroad,
+    kemptyfalls,
+    gunhill,
+    cloudsEnd,
+    companyGarden,
+    georgeEverest,
+    jharipaniFalls,
+  ],
+
+  intro: `Mussoorie, famously known as the Queen of the Hills, is one of the most popular hill stations in Uttarakhand. Surrounded by the Garhwal Himalayas and overlooking the Doon Valley, it offers scenic beauty, waterfalls, colonial charm, and a relaxing mountain vibe.`,
+
+  about: {
+    location: "Garhwal Himalayas, Uttarakhand",
+    altitude: "6,578 ft",
+    duration: "3 Days / 2 Nights",
+    difficulty: "Easy",
+    bestSeason: "March to June & September to October",
+    startingPoint: "Delhi / Dehradun",
+    description:
+      "Mussoorie offers a perfect blend of natural beauty, adventure, shopping, and relaxation. From waterfalls and viewpoints to peaceful forest walks and vibrant Mall Road evenings, it is ideal for families, couples, and friends seeking a refreshing getaway.",
+  },
+
+  highlights: [
+    {
+      name: "Kempty Falls",
+      description:
+        "One of the most famous waterfalls near Mussoorie, perfect for photography and light bathing. A refreshing spot surrounded by hills and small shops.",
+    },
+    {
+      name: "Lal Tibba",
+      description:
+        "The highest point in Mussoorie offering breathtaking Himalayan views. A peaceful location ideal for sunrise and panoramic photography.",
+    },
+    {
+      name: "Gun Hill",
+      description:
+        "Second highest peak accessible via ropeway ride from Mall Road. Offers stunning views of Doon Valley and snow-capped Himalayan ranges.",
+    },
+    {
+      name: "Camel's Back Road",
+      description:
+        "A 3 km scenic walking stretch known for sunset views and a rock formation shaped like a camel’s hump. Ideal for peaceful morning and evening walks.",
+    },
+    {
+      name: "Cloud's End",
+      description:
+        "A serene and less crowded area surrounded by dense oak and deodar forests. Perfect for nature lovers and quiet forest walks.",
+    },
+    {
+      name: "Company Garden",
+      description:
+        "A beautifully maintained garden with colorful flowers, boating facilities, and family-friendly attractions.",
+    },
+    {
+      name: "George Everest House",
+      description:
+        "A historic viewpoint offering panoramic Himalayan views. Popular for short treks and sunset photography.",
+    },
+    {
+      name: "Bhatta Falls",
+      description:
+        "A quieter and cleaner waterfall on the Mussoorie–Dehradun road, ideal for a peaceful picnic experience.",
+    },
+    {
+      name: "Jharipani Falls",
+      description:
+        "A hidden waterfall requiring a short trek to reach. Perfect for adventure lovers and nature photography.",
+    },
+    {
+      name: "Mossy Falls",
+      description:
+        "A calm and scenic waterfall surrounded by greenery and moss-covered rocks, ideal for those seeking less crowded spots.",
+    },
+  ],
+
+  whyChoose: [
+    "Perfect weekend hill station getaway",
+    "Beautiful Himalayan & Doon Valley views",
+    "Famous waterfalls & viewpoints",
+    "Shopping & cafe culture on Mall Road",
+    "Suitable for families & couples",
+    "Comfortable stays & scenic drives",
+  ],
+
+  itinerary: [
+    {
+      day: "Day 1",
+      title: "Arrival → Mall Road & Camel's Back Road",
+      description:
+        "Arrive in Mussoorie and check-in to hotel. Explore Mall Road, Christ Church, and enjoy sunset at Camel's Back Road.",
+    },
+    {
+      day: "Day 2",
+      title: "Kempty Falls → Gun Hill → Lal Tibba",
+      description:
+        "Visit Kempty Falls in the morning. Later enjoy ropeway to Gun Hill, explore Company Garden, and witness sunset at Lal Tibba.",
+    },
+    {
+      day: "Day 3",
+      title: "George Everest → Cloud's End → Departure",
+      description:
+        "Visit George Everest House, explore Cloud's End, and optional visits to Bhatta Falls, Jharipani Falls, or Mossy Falls before departure.",
+    },
+  ],
+
+  fitness: {
+    level: "Easy",
+    suitableFor: [
+      "Families",
+      "Couples",
+      "Friends",
+      "Senior citizens",
+    ],
+    recommended: [
+      "Comfortable walking shoes",
+      "Basic fitness for light walking",
+      "Comfortable with hilly road travel",
+    ],
+  },
+
+  packingList: [
+    "Light woolens (even in summer evenings)",
+    "Comfortable walking shoes",
+    "Sunglasses & sunscreen",
+    "Camera for scenic views",
+    "Personal medicines",
+    "Valid ID proof",
+  ],
+
+  trekfaqs: [
+    {
+      question: "What is the best time to visit Mussoorie?",
+      answer:
+        "The best time to visit is March to June for pleasant weather and September to October for clear Himalayan views.",
+    },
+    {
+      question: "Is snowfall available in Mussoorie?",
+      answer:
+        "Yes, snowfall usually occurs during December and January depending on weather conditions.",
+    },
+    {
+      question: "Is Mussoorie suitable for family trips?",
+      answer:
+        "Yes, Mussoorie is ideal for families, couples, and senior citizens due to easy sightseeing and good road connectivity.",
+    },
+    {
+      question: "Are adventure activities available?",
+      answer:
+        "Yes, ropeway rides, short treks, ziplining, and nature walks are available in Mussoorie.",
+    },
+  ],
+},
+{
+    id: "benog-hill-trek",
+    title: "Benog Hill Trek",
+    subtitle: "Hidden Gem Near Mussoorie",
+    price: "₹1,999",
+    rating: "4.6 (3k)",
+    location: "Benog Wildlife Sanctuary, Mussoorie, Uttarakhand",
+    duration: "1–2 Days",
+    altitude: "7,500 ft",
+    difficulty: "Easy",
+    startingPoint: "Mussoorie",
+
+    bestSeason: [
+      "March",
+      "April",
+      "May",
+      "June",
+      "September",
+      "October",
+      "November",
+    ],
+    trekType: ["Nature Walk", "Weekend Trek", "Beginner Friendly"],
+
+    image: [binoghill, binog1, binog2, binog3, binog4],
+
+    intro: `Benog Hill Trek, located inside the Benog Wildlife Sanctuary near Mussoorie, is a peaceful and less crowded trail perfect for beginners and nature lovers. Surrounded by dense forests and panoramic Himalayan views, this short trek is ideal for a quick mountain escape.`,
+
+    about: {
+      location: "Benog Wildlife Sanctuary, Mussoorie, Uttarakhand",
+      altitude: "7,500 ft (2,286 meters)",
+      duration: "1–2 Days",
+      difficulty: "Easy",
+      bestSeason: "March to June & September to November",
+      startingPoint: "Mussoorie",
+      description:
+        "Benog Hill offers scenic forest trails, birdwatching opportunities, and stunning views of the Bandarpoonch and Chaukhamba ranges on clear days. The trail is calm and ideal for beginners, families, and weekend travelers seeking a nature retreat.",
+    },
+
+    whyChoose: [
+      "Peaceful & less crowded trail",
+      "Perfect short weekend getaway",
+      "Beautiful Himalayan views",
+      "Rich flora & birdlife",
+      "Ideal for beginners & families",
+      "Close to Mussoorie",
+    ],
+
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Mussoorie → Benog Hill → Return",
+        altitude: "7,500 ft",
+        description:
+          "Short drive to Benog Wildlife Sanctuary entry point. Trek through forest trails to Benog Hill summit and enjoy panoramic views before returning.",
+      },
+      {
+        day: "Day 2 (Optional)",
+        title: "Explore Mussoorie",
+        description:
+          "Optional exploration of nearby attractions like Cloud’s End and George Everest Peak before departure.",
+      },
+    ],
+
+    fitness: {
+      level: "Easy",
+      suitableFor: [
+        "Beginners",
+        "Families",
+        "Nature lovers",
+        "Weekend travelers",
+      ],
+      recommended: [
+        "Comfortable walking for 2–3 hours",
+        "Basic stamina",
+        "No prior trekking experience required",
+      ],
+    },
+
+    packingList: [
+      "Comfortable walking shoes",
+      "Light jacket",
+      "Water bottle",
+      "Sunglasses & sunscreen",
+      "Small daypack",
+      "Personal medicines",
+    ],
+
+    trekfaqs: [
+      {
+        question: "Is Benog Hill Trek suitable for beginners?",
+        answer: "Yes, it is an easy trek suitable for beginners and families.",
+      },
+      {
+        question: "Is permission required for this trek?",
+        answer:
+          "Yes, entry to Benog Wildlife Sanctuary may require a small entry fee.",
+      },
+      {
+        question: "How long does the trek take?",
+        answer:
+          "The trek can be completed in a few hours, making it ideal for a day trip.",
+      },
+      {
+        question: "What can we see from the summit?",
+        answer:
+          "On clear days, Bandarpoonch, Chaukhamba, and surrounding Himalayan ranges are visible.",
+      },
+      {
+        question: "Is camping allowed?",
+        answer:
+          "Camping inside the wildlife sanctuary is generally restricted; check local guidelines before planning.",
+      },
+      {
+        question: "What is the best time to visit?",
+        answer:
+          "March to June and September to November offer the best weather and clear views.",
       },
     ],
   },
@@ -1195,125 +1500,7 @@ export const destinations = [
       },
     ],
   },
-  {
-    id: "benog-hill-trek",
-    title: "Benog Hill Trek",
-    subtitle: "Hidden Gem Near Mussoorie",
-    price: "₹1,999",
-    rating: "4.6 (3k)",
-    location: "Benog Wildlife Sanctuary, Mussoorie, Uttarakhand",
-    duration: "1–2 Days",
-    altitude: "7,500 ft",
-    difficulty: "Easy",
-    startingPoint: "Mussoorie",
-
-    bestSeason: [
-      "March",
-      "April",
-      "May",
-      "June",
-      "September",
-      "October",
-      "November",
-    ],
-    trekType: ["Nature Walk", "Weekend Trek", "Beginner Friendly"],
-
-    image: [binoghill, binog1, binog2, binog3, binog4],
-
-    intro: `Benog Hill Trek, located inside the Benog Wildlife Sanctuary near Mussoorie, is a peaceful and less crowded trail perfect for beginners and nature lovers. Surrounded by dense forests and panoramic Himalayan views, this short trek is ideal for a quick mountain escape.`,
-
-    about: {
-      location: "Benog Wildlife Sanctuary, Mussoorie, Uttarakhand",
-      altitude: "7,500 ft (2,286 meters)",
-      duration: "1–2 Days",
-      difficulty: "Easy",
-      bestSeason: "March to June & September to November",
-      startingPoint: "Mussoorie",
-      description:
-        "Benog Hill offers scenic forest trails, birdwatching opportunities, and stunning views of the Bandarpoonch and Chaukhamba ranges on clear days. The trail is calm and ideal for beginners, families, and weekend travelers seeking a nature retreat.",
-    },
-
-    whyChoose: [
-      "Peaceful & less crowded trail",
-      "Perfect short weekend getaway",
-      "Beautiful Himalayan views",
-      "Rich flora & birdlife",
-      "Ideal for beginners & families",
-      "Close to Mussoorie",
-    ],
-
-    itinerary: [
-      {
-        day: "Day 1",
-        title: "Mussoorie → Benog Hill → Return",
-        altitude: "7,500 ft",
-        description:
-          "Short drive to Benog Wildlife Sanctuary entry point. Trek through forest trails to Benog Hill summit and enjoy panoramic views before returning.",
-      },
-      {
-        day: "Day 2 (Optional)",
-        title: "Explore Mussoorie",
-        description:
-          "Optional exploration of nearby attractions like Cloud’s End and George Everest Peak before departure.",
-      },
-    ],
-
-    fitness: {
-      level: "Easy",
-      suitableFor: [
-        "Beginners",
-        "Families",
-        "Nature lovers",
-        "Weekend travelers",
-      ],
-      recommended: [
-        "Comfortable walking for 2–3 hours",
-        "Basic stamina",
-        "No prior trekking experience required",
-      ],
-    },
-
-    packingList: [
-      "Comfortable walking shoes",
-      "Light jacket",
-      "Water bottle",
-      "Sunglasses & sunscreen",
-      "Small daypack",
-      "Personal medicines",
-    ],
-
-    trekfaqs: [
-      {
-        question: "Is Benog Hill Trek suitable for beginners?",
-        answer: "Yes, it is an easy trek suitable for beginners and families.",
-      },
-      {
-        question: "Is permission required for this trek?",
-        answer:
-          "Yes, entry to Benog Wildlife Sanctuary may require a small entry fee.",
-      },
-      {
-        question: "How long does the trek take?",
-        answer:
-          "The trek can be completed in a few hours, making it ideal for a day trip.",
-      },
-      {
-        question: "What can we see from the summit?",
-        answer:
-          "On clear days, Bandarpoonch, Chaukhamba, and surrounding Himalayan ranges are visible.",
-      },
-      {
-        question: "Is camping allowed?",
-        answer:
-          "Camping inside the wildlife sanctuary is generally restricted; check local guidelines before planning.",
-      },
-      {
-        question: "What is the best time to visit?",
-        answer:
-          "March to June and September to November offer the best weather and clear views.",
-      },
-    ],
-  },
+  
 ];
 
 export const trekkingServices = [

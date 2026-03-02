@@ -3,7 +3,7 @@
 import React from "react";
 
 function WhatsappIcon() {
-  const phoneNumber = "919634847461";
+  const phoneNumber = "918979735791";
 
   return (
     <a
