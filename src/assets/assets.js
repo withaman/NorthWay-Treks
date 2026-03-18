@@ -1,3 +1,4 @@
+import logo from "./Northwaylogo.png";
 import hero from "./hero.jpg";
 import footer from "./footer.jpg";
 import servicebg from "./servicesbackground.jpg";
@@ -71,6 +72,7 @@ import jharipaniFalls from "./jharipani.jpg";
 
 
 export const image = {
+  logo,
   hero,
   footer,
   servicebg,

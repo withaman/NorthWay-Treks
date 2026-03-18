@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { image } from "@/assets/assets";
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
@@ -13,11 +15,18 @@ export default function Navbar() {
         <>
             {/* NAVBAR */}
             <header className="fixed top-0 left-0 w-full z-50 bg-black/15 backdrop-blur-sm text-white">
-                <div className="flex justify-between items-center px-6 py-4">
+                <div className="flex justify-between items-center px-6 py-2">
                     {/* Logo */}
-                    <Link href="/" className="text-xl font-bold">NorthWay Treks</Link>
+                    <Link href="/" className="text-xl font-bold flex justify-center items-center">
+                        <Image
+                            src={image.logo}
+                            alt="logo"
+                            width={50}
+                            height={50}
+                            className="object-contain mr-2"
+                        />NorthWay Treks</Link>
                     {/* Desktop Menu */}
-                    <ul className="hidden md:flex mr-[3rem] gap-6 text-sm">
+                    <ul className="hidden md:flex mr-[5rem] gap-6 text-sm">
                         <li><Link href="/" className={navLink}>Home</Link></li>
                         <li><Link href="/pack" className={navLink}>Packages</Link></li>
                         <li><Link href="/about" className={navLink}>About Us</Link></li>
