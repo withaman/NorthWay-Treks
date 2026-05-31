@@ -1,4 +1,5 @@
 "use client";
+import { destinations } from "@/assets/assets";
 import { sendToWhatsApp } from "@/utils/sendToWhatsapp";
 import { useState } from "react";
 
@@ -26,7 +27,7 @@ const handleSubmit = (e) => {
   e.preventDefault();
 
   sendToWhatsApp(
-    "918979735791", // replace with your number
+    "918192863640", // replace with your number
     "🌄 New Himalayan Trip Inquiry",
     {
       Name: formData.fullName,
@@ -71,7 +72,8 @@ const handleSubmit = (e) => {
 
           <div className="mt-6 space-y-3 text-gray-700">
             <p>📧 northwaytreks@gmail.com</p>
-            <p>📞 +91 98765 43210</p>
+            <p>📞 +91 81928 63640</p>
+            <p>📞 +91 83848 74139</p>
           </div>
         </div>
 
@@ -122,23 +124,29 @@ const handleSubmit = (e) => {
             {/* Trip Details */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
 
-              <div>
-                <label className="block text-sm font-medium mb-1">
-                  Destination
-                </label>
-                <select
-  name="destination"
-  onChange={handleChange}
-  className="w-full border p-2 rounded-full focus:ring-2 focus:ring-orange-400 outline-none"
->
-                  <option value="">Select Destination</option>
-                  <option>Kedarnath Trek</option>
-                  <option>Hampta Pass</option>
-                  <option>Valley of Flowers</option>
-                  <option>Spiti Valley</option>
-                  <option>Custom Trip</option>
-                </select>
-              </div>
+
+<div>
+  <label className="block text-sm font-medium mb-1">
+    Destination
+  </label>
+
+  <input
+    list="destination-list"
+    title="destination"
+    onChange={handleChange}
+    placeholder="Type or select destination"
+    className="w-full border text-xs p-2 rounded-full focus:ring-2 focus:ring-orange-400 outline-none"
+  />
+
+  <datalist id="destination-list">
+    {destinations.map((item, index) => (
+      <option
+        key={index}
+        value={item.title} // change according to your object key
+      />
+    ))}
+  </datalist>
+</div>
 
               <div>
                 <label className="block text-sm font-medium mb-1">
@@ -147,7 +155,7 @@ const handleSubmit = (e) => {
                 <select
   name="tripType"
   onChange={handleChange}
-  className="w-full border p-2 rounded-full focus:ring-2 focus:ring-orange-400 outline-none"
+  className="w-full border p-2 text-xs rounded-full focus:ring-2 focus:ring-orange-400 outline-none"
 >
                   <option value="">Select Trip Type</option>
                   <option>Adventure Trek</option>
@@ -165,7 +173,7 @@ const handleSubmit = (e) => {
   type="date"
   name="travelDate"
   onChange={handleChange}
-  className="w-full border p-2 rounded-full focus:ring-2 focus:ring-orange-400 outline-none"
+  className="w-full border p-2 text-xs rounded-full focus:ring-2 focus:ring-orange-400 outline-none"
 />
               </div>
 
@@ -174,7 +182,7 @@ const handleSubmit = (e) => {
                   Travelers
                 </label>
 
-                <div className="flex items-center border rounded-full overflow-hidden h-[42px]">
+                <div className="flex items-center text-xs border rounded-full overflow-hidden h-[35px]">
                   <button
                     type="button"
                     onClick={decrease}

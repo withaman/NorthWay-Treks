@@ -30,7 +30,7 @@ export default function ContactPage() {
     e.preventDefault();
 
     sendToWhatsApp(
-      "918979735791", // your WhatsApp number
+      "918192863640", // your WhatsApp number
       "📩 Contact Page Travel Inquiry",
       {
         Name: formData.name,
@@ -69,7 +69,7 @@ export default function ContactPage() {
       <section className="max-w-7xl mx-auto px-4 -mt-16 relative z-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
-            { title: "Call Us On", value: "+91 89797 35791" },
+            { title: "Call Us On", value: "+91 81928 63640" },
             { title: "Email Us", value: "northwaytreks@gmail.com" },
             { title: "Our Location", value: "Dehradun, Uttarakhand" },
           ].map((item, i) => (

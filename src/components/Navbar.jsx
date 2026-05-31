@@ -21,10 +21,10 @@ export default function Navbar() {
   className="text-xl font-bold flex justify-center items-center"
 >
   <Image
-    src="/images/logo.png"
+    src="/images/nwlogo.png"
     alt="logo"
-    width={50}
-    height={50}
+    width={45}
+    height={45}
     className="object-contain mr-2 rounded-full"
   />
 
@@ -33,7 +33,7 @@ export default function Navbar() {
                     {/* Desktop Menu */}
                     <ul className="hidden md:flex mr-[5rem] gap-6 text-sm">
                         <li><Link href="/" className={navLink}>Home</Link></li>
-                        <li><Link href="/pack" className={navLink}>Packages</Link></li>
+                        <li><Link href="/pack" className={navLink}>Treks</Link></li>
                         <li><Link href="/about" className={navLink}>About Us</Link></li>
                         <li><Link href="/contact" className={navLink}>Contact</Link></li>
                     </ul>

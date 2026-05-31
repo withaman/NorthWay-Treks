@@ -25,7 +25,7 @@ const handleSubmit = (e) => {
   e.preventDefault();
 
   sendToWhatsApp(
-    "918979735791", // your number 918979735791
+    "9181928 63640", // your number 918979735791
     "📩 Travel Inquiry",
     {
       Name: formData.name,

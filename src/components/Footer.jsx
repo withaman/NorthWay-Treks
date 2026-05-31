@@ -13,18 +13,6 @@ export default function Footer() {
   return (
     <footer className="relative w-full min-h-[10vh] flex items-center btn-cta">
 
-      {/* Background Image
-      <Image
-        src={image.footer}
-        alt="Northway Treks"
-        fill
-        priority
-        className="object-cover"
-      />
-
-      {/* Overlay /}
-      <div className="absolute inset-0 bg-black/60"></div> */}
-
       {/* Content */}
       <div className="relative z-10 flex flex-col md:flex-row w-full 
                       justify-between mx-auto 
@@ -35,9 +23,18 @@ export default function Footer() {
 
         {/* Brand Section */}
         <div className="flex flex-col gap-3 max-w-sm">
+          <div className="flex items-center">
+            <Image
+              src="/images/logo.png"
+              alt="logo"
+              width={50}
+              height={50}
+              className="object-contain mr-2 rounded-full"
+            />
           <h1 className="text-2xl md:text-3xl font-semibold text-black">
             NorthWay Treks
           </h1>
+          </div>
           <p className="italic text-sm md:text-md leading-relaxed">
             Every trail with Northway Treks is more than just a journey — it’s a complete Uttarakhand trekking experience in the heart of the Indian Himalayas, where untouched nature, vibrant mountain culture, and breathtaking landscapes come together to create unforgettable memories.
           </p>
@@ -65,8 +62,14 @@ export default function Footer() {
               {/* Phone */}
               <li className="flex items-center gap-3">
                 <RiCellphoneFill className="text-lg md:text-xl" />
-                <a href="tel:+918979735791" className="hover:text-gray-300">
-                  +918979735791
+                <a href="tel:+918192863640" className="hover:text-gray-300">
+                  +91 81928 63640
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <RiCellphoneFill className="text-lg md:text-xl" />
+                <a href="tel:+918384874139" className="hover:text-gray-300">
+                  +91 83848 74139
                 </a>
               </li>
 

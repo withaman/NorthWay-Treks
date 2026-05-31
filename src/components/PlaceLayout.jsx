@@ -27,7 +27,7 @@ export default function PlaceLayout({ trekInfo }) {
     e.preventDefault();
 
     sendToWhatsApp(
-      "918979735791", // replace with your number
+      "918192863640", // replace with your number
       "🗓️ New Booking Request",
       {
         Name: formData.fullName,
