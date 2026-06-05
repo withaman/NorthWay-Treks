@@ -21,11 +21,12 @@ export default function WhyChooseUs() {
                 <div className="flex items-center gap-4 bg-gray-600 rounded-xl p-2">
                     <div className="relative bg-white min-w-[80px] h-20 rounded-xl flex-shrink-0 overflow-hidden">
                         <Image
-                            src={image.guide} // replace with your image
-                            alt="thumbnail"
-                            fill
-                            className="object-cover"
-                        />
+    src={image.guide}
+    alt="thumbnail"
+    fill
+    sizes="(max-width: 768px) 100vw, 33vw"
+    className="object-cover"
+/>
                     </div>
                     <div>
                         <h3 className="font-semibold">Local Expertise</h3>
@@ -42,6 +43,7 @@ export default function WhyChooseUs() {
                             src={image.compass} // replace with your image
                             alt="thumbnail"
                             fill
+                            sizes="(max-width: 768px) 100vw, 33vw"
                             className="object-cover"
                         />
                     </div>
@@ -60,6 +62,7 @@ export default function WhyChooseUs() {
                             src={image.support} // replace with your image
                             alt="thumbnail"
                             fill
+                            sizes="(max-width: 768px) 100vw, 33vw"
                             className="object-cover"
                         />
                     </div>

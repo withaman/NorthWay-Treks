@@ -1,4 +1,5 @@
 import FaqsPage from "@/components/FaqsPage";
+import GoogleReviews from "@/components/GoogleReviews";
 import HeroSection from "@/components/HeroSection";
 import Packages from "@/components/Packages";
 import Reviews from "@/components/Reviews";

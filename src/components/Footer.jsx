@@ -11,13 +11,13 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="relative w-full min-h-[10vh] flex items-center btn-cta">
+    <footer className="relative w-full min-h-[10vh] flex flex-col items-center btn-cta">
 
       {/* Content */}
       <div className="relative z-10 flex flex-col md:flex-row w-full 
                       justify-between mx-auto 
                       px-6 sm:px-10 md:px-16 
-                      py-10 md:py-14 
+                      py-10 md:py-8 
                       gap-10 md:gap-16 
                       text-white">
 
@@ -101,7 +101,12 @@ export default function Footer() {
           </div>
 
         </div>
+        
       </div>
+      <hr />
+      <p className="text-sm text-white mb-5 font-mono">
+    © 2026 NorthWay Treks. "Every summit begins with a single step."
+</p>
     </footer>
   )
 }

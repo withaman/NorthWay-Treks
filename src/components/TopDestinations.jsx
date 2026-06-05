@@ -39,9 +39,10 @@ export default function TopDestinations() {
               className={`${gridClasses[index]} relative rounded-[2.5rem] overflow-hidden group`}
             >
               <Image
-                src={item.image[0]} // first image from array
+                src={item.image[0]}
                 alt={item.title}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 priority={index === 1}
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />

@@ -28,6 +28,7 @@ export default function Packages() {
               src={item.image?.[0] || "/hero.jpg"}
               alt={item.title}
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
               className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
 

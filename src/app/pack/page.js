@@ -12,15 +12,13 @@ export default function PackPage() {
   const filteredDestinations = destinations.filter((item) =>
     `${item.title} ${item.location}`
       .toLowerCase()
-      .includes(search.toLowerCase())
+      .includes(search.toLowerCase()),
   );
 
   return (
     <section className="bg-gray-100 p-7 mx-7 mb-10 rounded-2xl mt-20">
-
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-center mb-10 text-black gap-6">
-
         {/* Left Content */}
         <div>
           <h2 className="text-2xl md:text-3xl font-bold text-center md:text-left">
@@ -41,9 +39,7 @@ export default function PackPage() {
             onChange={(e) => setSearch(e.target.value)}
             className="w-full px-4 py-2 pl-10 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-black transition"
           />
-          <span className="absolute left-3 top-2.5 text-gray-400">
-            🔍
-          </span>
+          <span className="absolute left-3 top-2.5 text-gray-400">🔍</span>
         </div>
       </div>
 
@@ -64,6 +60,7 @@ export default function PackPage() {
                 src={item.image?.[0] || "/hero.jpg"}
                 alt={item.title}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                 className="object-cover group-hover:scale-110 transition duration-500"
               />
 
@@ -74,12 +71,8 @@ export default function PackPage() {
 
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-4 flex flex-col justify-end text-white">
-                <h3 className="text-lg font-semibold">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-gray-200">
-                  {item.subtitle}
-                </p>
+                <h3 className="text-lg font-semibold">{item.title}</h3>
+                <p className="text-sm text-gray-200">{item.subtitle}</p>
 
                 <div className="flex items-center justify-between mt-2 text-sm">
                   <span>

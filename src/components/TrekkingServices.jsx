@@ -11,6 +11,7 @@ export default function TrekkingServices() {
         src={image.servicebg}
         alt="Himalayan trekking destinations"
         fill
+        sizes="100vw"
         priority
         className="object-cover"
       />

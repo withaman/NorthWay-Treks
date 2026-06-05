@@ -14,17 +14,13 @@ export default function TravelPoint() {
         <Image
           src={image.t1}
           alt="travel point"
-          width={320}
-          height={320}
-          className="rounded-full object-cover md:absolute md:top-[-250px]"
+          className="rounded-full object-cover md:absolute md:top-[-250px] w-70 h-80"
         />
 
         <Image
           src={image.hike}
           alt="travel point"
-          width={280}
-          height={280}
-          className="rounded-full object-cover border-4 border-white absolute top-35 md:top-[-50px] md:left-20"
+          className="rounded-full object-cover border-4 border-white absolute top-35 md:top-[-50px] md:left-20 w-60 h-80"
         />
       </div>
 

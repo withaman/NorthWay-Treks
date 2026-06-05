@@ -14,6 +14,7 @@ export default function About() {
           src={image.about}
           alt="About Us Background"
           fill
+          sizes="100vw"
           priority
           className="object-cover"
         />
@@ -89,6 +90,7 @@ export default function About() {
               src={image.about1}
               alt="About Northway Treks"
               fill
+              sizes="100vw"
               className="object-cover"
             />
           </div>
@@ -143,10 +145,12 @@ export default function About() {
               >
                 {/* Image */}
                 <div className="relative h-50 w-60 overflow-hidden">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                  <Image
+                    src={image.about1}
+                    alt="About Northway Treks"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
+                    className="object-cover"
                   />
                 </div>
 
