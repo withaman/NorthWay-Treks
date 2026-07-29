@@ -1,37 +1,88 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   Mail,
   Lock,
-  User,
   Mountain,
   ArrowRight,
 } from "lucide-react";
 
-export default function AuthPage() {
-  const [isLogin, setIsLogin] = useState(true);
+export default function LoginPage() {
+  const router = useRouter();
+
+  const [form, setForm] = useState({
+    email: "",
+    password: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleChange = (e) => {
+    setForm((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        router.push("/admin/dashboard");
+      } else {
+        setError(data.message || "Invalid email or password");
+      }
+    } catch (err) {
+      console.log(err);
+      setError("Something went wrong. Please try again.");
+    }
+
+    setLoading(false);
+  };
 
   return (
     <div className="min-h-screen flex">
 
       {/* Left Side */}
+
       <div className="hidden lg:flex lg:w-1/2 theme-color text-white p-16 flex-col justify-between">
 
         <div>
+
           <div className="flex items-center gap-3">
             <Mountain size={40} />
+
             <h1 className="text-4xl font-bold">
-              Northway Treks
+              NorthWay Treks
             </h1>
+
           </div>
 
           <p className="mt-6 text-xl opacity-90">
             Adventure Management Platform
           </p>
+
         </div>
 
         <div>
+
           <h2 className="text-5xl font-bold leading-tight">
             Manage Treks,
             <br />
@@ -41,32 +92,17 @@ export default function AuthPage() {
           </h2>
 
           <p className="mt-6 text-lg opacity-90 max-w-lg">
-            Control your trekking website, manage
-            packages, publish blogs, track enquiries
-            and grow your online presence.
+            Control your trekking website, manage packages,
+            publish blogs, track enquiries and grow your
+            online presence.
           </p>
+
         </div>
-
-        {/* <div className="flex gap-8">
-          <div>
-            <h3 className="text-3xl font-bold">50+</h3>
-            <p>Trek Packages</p>
-          </div>
-
-          <div>
-            <h3 className="text-3xl font-bold">100+</h3>
-            <p>Blog Articles</p>
-          </div>
-
-          <div>
-            <h3 className="text-3xl font-bold">10K+</h3>
-            <p>Travellers</p>
-          </div>
-        </div> */}
 
       </div>
 
       {/* Right Side */}
+
       <div className="flex-1 bg-gray-100 flex items-center justify-center p-6">
 
         <div className="w-full max-w-md bg-white rounded-3xl shadow-xl p-8">
@@ -74,46 +110,30 @@ export default function AuthPage() {
           <div className="text-center mb-8">
 
             <h2 className="text-3xl font-bold">
-              {isLogin ? "Welcome Back" : "Create Account"}
+              Welcome Back
             </h2>
 
             <p className="text-gray-500 mt-2">
-              {isLogin
-                ? "Login to continue"
-                : "Register your admin account"}
+              Login to your admin dashboard
             </p>
 
           </div>
 
-          <form className="space-y-5">
+          <form
+            onSubmit={handleLogin}
+            className="space-y-5"
+          >
 
-            {!isLogin && (
-              <div>
-                <label className="text-sm font-medium">
-                  Full Name
-                </label>
-
-                <div className="relative mt-2">
-                  <User
-                    size={18}
-                    className="absolute left-3 top-3.5 text-gray-400"
-                  />
-
-                  <input
-                    type="text"
-                    placeholder="Aman Rawat"
-                    className="w-full border rounded-xl pl-10 pr-4 py-3"
-                  />
-                </div>
-              </div>
-            )}
+            {/* Email */}
 
             <div>
+
               <label className="text-sm font-medium">
                 Email
               </label>
 
               <div className="relative mt-2">
+
                 <Mail
                   size={18}
                   className="absolute left-3 top-3.5 text-gray-400"
@@ -121,18 +141,28 @@ export default function AuthPage() {
 
                 <input
                   type="email"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
                   placeholder="admin@northwaytreks.com"
-                  className="w-full border rounded-xl pl-10 pr-4 py-3"
+                  required
+                  className="w-full border rounded-xl pl-10 pr-4 py-3 outline-none focus:ring-2 focus:ring-orange-400"
                 />
+
               </div>
+
             </div>
 
+            {/* Password */}
+
             <div>
+
               <label className="text-sm font-medium">
                 Password
               </label>
 
               <div className="relative mt-2">
+
                 <Lock
                   size={18}
                   className="absolute left-3 top-3.5 text-gray-400"
@@ -140,66 +170,54 @@ export default function AuthPage() {
 
                 <input
                   type="password"
+                  name="password"
+                  value={form.password}
+                  onChange={handleChange}
                   placeholder="••••••••"
-                  className="w-full border rounded-xl pl-10 pr-4 py-3"
+                  required
+                  className="w-full border rounded-xl pl-10 pr-4 py-3 outline-none focus:ring-2 focus:ring-orange-400"
                 />
+
               </div>
+
             </div>
 
-            {!isLogin && (
-              <div>
-                <label className="text-sm font-medium">
-                  Confirm Password
-                </label>
+            {/* Error */}
 
-                <div className="relative mt-2">
-                  <Lock
-                    size={18}
-                    className="absolute left-3 top-3.5 text-gray-400"
-                  />
-
-                  <input
-                    type="password"
-                    placeholder="••••••••"
-                    className="w-full border rounded-xl pl-10 pr-4 py-3"
-                  />
-                </div>
-              </div>
+            {error && (
+              <p className="text-red-500 text-sm">
+                {error}
+              </p>
             )}
 
-            {isLogin && (
-              <div className="text-right">
-                <button
-                  type="button"
-                  className="text-sm text-orange-600"
-                >
-                  Forgot Password?
-                </button>
-              </div>
-            )}
+            {/* Forgot Password */}
+
+            <div className="text-right">
+
+              <button
+                type="button"
+                className="text-sm text-orange-600 hover:underline"
+              >
+                Forgot Password?
+              </button>
+
+            </div>
+
+            {/* Login Button */}
 
             <button
               type="submit"
-              className="w-full theme-color text-white py-3 rounded-xl flex items-center justify-center gap-2 font-medium"
+              disabled={loading}
+              className="w-full theme-color text-white py-3 rounded-xl flex items-center justify-center gap-2 font-medium disabled:opacity-60"
             >
-              {isLogin ? "Login" : "Create Account"}
+
+              {loading ? "Logging in..." : "Login"}
+
               <ArrowRight size={18} />
+
             </button>
 
           </form>
-
-          <div className="text-center mt-6">
-
-            <button
-              onClick={() => setIsLogin(!isLogin)}
-              className="text-orange-600 font-medium"
-            >
-              {isLogin
-                ? "Create New Account"
-                : "Already have an account?"}
-            </button>
-
-          </div>
 
         </div>
 
