@@ -1,16 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import useAuth from "@/hooks/useAuth";
 import { useRouter } from "next/navigation";
-import {
-  Mail,
-  Lock,
-  Mountain,
-  ArrowRight,
-} from "lucide-react";
+import { Mail, Lock, Mountain, ArrowRight } from "lucide-react";
 
 export default function LoginPage() {
   const router = useRouter();
+
+  const { admin, loading: authLoading, refreshAdmin } = useAuth();
 
   const [form, setForm] = useState({
     email: "",
@@ -20,6 +18,13 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  // Redirect if already logged in
+  useEffect(() => {
+    if (!authLoading && admin) {
+      router.replace("/admin/dashboard");
+    }
+  }, [admin, authLoading, router]);
+
   const handleChange = (e) => {
     setForm((prev) => ({
       ...prev,
@@ -27,62 +32,79 @@ export default function LoginPage() {
     }));
   };
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
+const handleLogin = async (e) => {
+  e.preventDefault();
 
-    setLoading(true);
-    setError("");
+  setLoading(true);
 
-    try {
-      const res = await fetch("/api/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      });
+  console.log("1. Login Started");
 
-      const data = await res.json();
+  try {
+    const res = await fetch("/api/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    });
 
-      if (res.ok && data.success) {
-        router.push("/admin/dashboard");
-      } else {
-        setError(data.message || "Invalid email or password");
-      }
-    } catch (err) {
-      console.log(err);
-      setError("Something went wrong. Please try again.");
+    console.log("2. API Response");
+
+    const data = await res.json();
+
+    console.log("3. Data:", data);
+
+    if (data.success) {
+      console.log("4. Before refreshAdmin");
+
+      // Comment this out temporarily
+      // await refreshAdmin();
+
+      console.log("5. Before router");
+
+     await refreshAdmin();
+router.replace("/admin/dashboard");
+      console.log("6. After router");
     }
-
+  } catch (err) {
+    console.log(err);
+  } finally {
     setLoading(false);
-  };
+    console.log("7. Loading false");
+  }
+};
+
+  // Wait while checking login status
+  if (authLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-100">
+        <div className="bg-white shadow-lg rounded-2xl px-8 py-6">
+          <p className="text-gray-600 font-medium">
+            Checking authentication...
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen flex">
-
       {/* Left Side */}
 
       <div className="hidden lg:flex lg:w-1/2 theme-color text-white p-16 flex-col justify-between">
-
         <div>
-
           <div className="flex items-center gap-3">
             <Mountain size={40} />
 
-            <h1 className="text-4xl font-bold">
-              NorthWay Treks
-            </h1>
-
+            <h1 className="text-4xl font-bold">NorthWay Treks</h1>
           </div>
 
           <p className="mt-6 text-xl opacity-90">
             Adventure Management Platform
           </p>
-
         </div>
 
         <div>
-
           <h2 className="text-5xl font-bold leading-tight">
             Manage Treks,
             <br />
@@ -92,48 +114,29 @@ export default function LoginPage() {
           </h2>
 
           <p className="mt-6 text-lg opacity-90 max-w-lg">
-            Control your trekking website, manage packages,
-            publish blogs, track enquiries and grow your
-            online presence.
+            Control your trekking website, manage packages, publish blogs, track
+            enquiries and grow your online presence.
           </p>
-
         </div>
-
       </div>
 
       {/* Right Side */}
 
       <div className="flex-1 bg-gray-100 flex items-center justify-center p-6">
-
         <div className="w-full max-w-md bg-white rounded-3xl shadow-xl p-8">
-
           <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold">Welcome Back</h2>
 
-            <h2 className="text-3xl font-bold">
-              Welcome Back
-            </h2>
-
-            <p className="text-gray-500 mt-2">
-              Login to your admin dashboard
-            </p>
-
+            <p className="text-gray-500 mt-2">Login to your admin dashboard</p>
           </div>
 
-          <form
-            onSubmit={handleLogin}
-            className="space-y-5"
-          >
-
+          <form onSubmit={handleLogin} className="space-y-5">
             {/* Email */}
 
             <div>
-
-              <label className="text-sm font-medium">
-                Email
-              </label>
+              <label className="text-sm font-medium">Email</label>
 
               <div className="relative mt-2">
-
                 <Mail
                   size={18}
                   className="absolute left-3 top-3.5 text-gray-400"
@@ -148,21 +151,15 @@ export default function LoginPage() {
                   required
                   className="w-full border rounded-xl pl-10 pr-4 py-3 outline-none focus:ring-2 focus:ring-orange-400"
                 />
-
               </div>
-
             </div>
 
             {/* Password */}
 
             <div>
-
-              <label className="text-sm font-medium">
-                Password
-              </label>
+              <label className="text-sm font-medium">Password</label>
 
               <div className="relative mt-2">
-
                 <Lock
                   size={18}
                   className="absolute left-3 top-3.5 text-gray-400"
@@ -177,30 +174,22 @@ export default function LoginPage() {
                   required
                   className="w-full border rounded-xl pl-10 pr-4 py-3 outline-none focus:ring-2 focus:ring-orange-400"
                 />
-
               </div>
-
             </div>
 
             {/* Error */}
 
-            {error && (
-              <p className="text-red-500 text-sm">
-                {error}
-              </p>
-            )}
+            {error && <p className="text-red-500 text-sm">{error}</p>}
 
             {/* Forgot Password */}
 
             <div className="text-right">
-
               <button
                 type="button"
                 className="text-sm text-orange-600 hover:underline"
               >
                 Forgot Password?
               </button>
-
             </div>
 
             {/* Login Button */}
@@ -210,19 +199,13 @@ export default function LoginPage() {
               disabled={loading}
               className="w-full theme-color text-white py-3 rounded-xl flex items-center justify-center gap-2 font-medium disabled:opacity-60"
             >
-
               {loading ? "Logging in..." : "Login"}
 
               <ArrowRight size={18} />
-
             </button>
-
           </form>
-
         </div>
-
       </div>
-
     </div>
   );
 }

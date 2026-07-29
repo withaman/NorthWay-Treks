@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import useAuth from "@/hooks/useAuth";
 import { useRouter } from "next/navigation";
 import {
   LayoutDashboard,
@@ -40,6 +41,7 @@ const menuItems = [
 ];
 
 export default function Sidebar() {
+  const { admin } = useAuth();
   const router = useRouter();
 
   const handleLogout = async () => {
@@ -61,9 +63,17 @@ export default function Sidebar() {
     <aside className="w-64 h-screen fixed left-0 top-0 flex flex-col text-white bg-[linear-gradient(45deg,#ff0c00_0%,#fd8925_60%,#ff9b26_100%)]">
       {/* Logo */}
       <div className="p-6 border-b border-white/20">
-        <h1 className="text-xl font-bold">
-          Northway Admin
+        <h1 className="font-bold text-xl">
+
+          {admin?.name || "Northway Admin"}
+
         </h1>
+
+        <p className="text-sm opacity-70">
+
+          {admin?.email}
+
+        </p>
       </div>
 
       {/* Menu */}
