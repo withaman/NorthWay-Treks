@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import useAuth from "@/hooks/useAuth";
+import { useAuth } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 import { Mail, Lock, Mountain, ArrowRight } from "lucide-react";
 
@@ -20,10 +20,14 @@ export default function LoginPage() {
 
   // Redirect if already logged in
   useEffect(() => {
-    if (!authLoading && admin) {
-      router.replace("/admin/dashboard");
-    }
-  }, [admin, authLoading, router]);
+  // Wait until authentication check is complete
+  if (authLoading) return;
+
+  // If already logged in, redirect to dashboard
+  if (admin) {
+    router.replace("/admin/dashboard");
+  }
+}, [admin, authLoading, router]);
 
   const handleChange = (e) => {
     setForm((prev) => ({
@@ -36,8 +40,7 @@ const handleLogin = async (e) => {
   e.preventDefault();
 
   setLoading(true);
-
-  console.log("1. Login Started");
+  setError("");
 
   try {
     const res = await fetch("/api/auth/login", {
@@ -48,32 +51,27 @@ const handleLogin = async (e) => {
       body: JSON.stringify(form),
     });
 
-    console.log("2. API Response");
-
     const data = await res.json();
 
-    console.log("3. Data:", data);
-
-    if (data.success) {
-      console.log("4. Before refreshAdmin");
-
-      // Comment this out temporarily
-      // await refreshAdmin();
-
-      console.log("5. Before router");
-
-     await refreshAdmin();
-router.replace("/admin/dashboard");
-      console.log("6. After router");
+    if (!res.ok) {
+      setError(data.message);
+      return;
     }
+
+    // Update Auth Context
+    await refreshAdmin();
+
+    // Don't redirect here.
+    // The useEffect will automatically redirect
+    // when admin becomes available.
+
   } catch (err) {
-    console.log(err);
+    console.error(err);
+    setError("Something went wrong.");
   } finally {
     setLoading(false);
-    console.log("7. Loading false");
   }
 };
-
   // Wait while checking login status
   if (authLoading) {
     return (

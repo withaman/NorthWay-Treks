@@ -1,30 +1,43 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { AuthContext } from "@/context/AuthContext";
+import { fetchWithAuth } from "@/lib/fetchWithAuth";
+
 
 export default function AuthProvider({ children }) {
   const [admin, setAdmin] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const getAdmin = async () => {
-    try {
-      const res = await fetch("/api/auth/me");
+  const router = useRouter();
+  const pathname = usePathname();
 
-      if (!res.ok) {
-        setLoading(false);
-        return;
-      }
+const getAdmin = async () => {
+  try {
+    setLoading(true);
 
-      const data = await res.json();
+    const res = await fetchWithAuth("/api/auth/me");
 
-      setAdmin(data.admin);
-    } catch (err) {
-      console.log(err);
+    if (!res) {
+      setAdmin(null);
+      return;
     }
 
+    const data = await res.json();
+
+    if (data.success) {
+      setAdmin(data.admin);
+    } else {
+      setAdmin(null);
+    }
+  } catch (err) {
+    console.error(err);
+    setAdmin(null);
+  } finally {
     setLoading(false);
-  };
+  }
+};
 
   useEffect(() => {
     getAdmin();
