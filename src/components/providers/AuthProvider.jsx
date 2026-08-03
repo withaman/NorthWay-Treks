@@ -3,8 +3,6 @@
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { AuthContext } from "@/context/AuthContext";
-import { fetchWithAuth } from "@/lib/fetchWithAuth";
-
 
 export default function AuthProvider({ children }) {
   const [admin, setAdmin] = useState(null);
@@ -17,7 +15,7 @@ const getAdmin = async () => {
   try {
     setLoading(true);
 
-    const res = await fetchWithAuth("/api/auth/me");
+    const res = await fetch("/api/auth/me");
 
     if (!res) {
       setAdmin(null);

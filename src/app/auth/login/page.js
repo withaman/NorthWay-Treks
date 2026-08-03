@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
+import { validateLogin } from "@/lib/validation";
 import { Mail, Lock, Mountain, ArrowRight } from "lucide-react";
 
 export default function LoginPage() {
@@ -16,62 +17,77 @@ export default function LoginPage() {
   });
 
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState({});
+  const [apiError, setApiError] = useState("");
 
   // Redirect if already logged in
   useEffect(() => {
-  // Wait until authentication check is complete
-  if (authLoading) return;
+    // Wait until authentication check is complete
+    if (authLoading) return;
 
-  // If already logged in, redirect to dashboard
-  if (admin) {
-    router.replace("/admin/dashboard");
-  }
-}, [admin, authLoading, router]);
+    // If already logged in, redirect to dashboard
+    if (admin) {
+      router.replace("/admin/dashboard");
+    }
+  }, [admin, authLoading, router]);
 
-  const handleChange = (e) => {
-    setForm((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
+ const handleChange = (e) => {
+  const { name, value } = e.target;
 
-const handleLogin = async (e) => {
-  e.preventDefault();
+  setForm((prev) => ({
+    ...prev,
+    [name]: value,
+  }));
 
-  setLoading(true);
-  setError("");
+  setErrors((prev) => ({
+    ...prev,
+    [name]: "",
+  }));
+};
 
-  try {
-    const res = await fetch("/api/auth/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(form),
-    });
+  const handleLogin = async (e) => {
+    e.preventDefault();
 
-    const data = await res.json();
+    const validationErrors = validateLogin(form);
 
-    if (!res.ok) {
-      setError(data.message);
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
       return;
     }
 
-    // Update Auth Context
-    await refreshAdmin();
+    setErrors({});
+    setLoading(true);
+    setApiError("");
 
-    // Don't redirect here.
-    // The useEffect will automatically redirect
-    // when admin becomes available.
+    try {
+      const res = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
 
-  } catch (err) {
-    console.error(err);
-    setError("Something went wrong.");
-  } finally {
-    setLoading(false);
-  }
-};
+      const data = await res.json();
+
+      if (!res.ok) {
+        setApiError(data?.message || "Login failed");
+        return;
+      }
+
+      // Update Auth Context
+      await refreshAdmin();
+
+      // Don't redirect here.
+      // The useEffect will automatically redirect
+      // when admin becomes available.
+    } catch (err) {
+      console.error(err);
+      setApiError("Something went wrong.");
+    } finally {
+      setLoading(false);
+    }
+  };
   // Wait while checking login status
   if (authLoading) {
     return (
@@ -129,6 +145,11 @@ const handleLogin = async (e) => {
           </div>
 
           <form onSubmit={handleLogin} className="space-y-5">
+            {apiError && (
+              <div className="mb-4 rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-600">
+                {apiError}
+              </div>
+            )}
             {/* Email */}
 
             <div>
@@ -146,10 +167,17 @@ const handleLogin = async (e) => {
                   value={form.email}
                   onChange={handleChange}
                   placeholder="admin@northwaytreks.com"
-                  required
-                  className="w-full border rounded-xl pl-10 pr-4 py-3 outline-none focus:ring-2 focus:ring-orange-400"
+                  className={`w-full rounded-xl pl-10 pr-4 py-3 outline-none transition ${
+                    errors.email
+                      ? "border border-red-500 focus:ring-2 focus:ring-red-400"
+                      : "border focus:ring-2 focus:ring-orange-400"
+                  }`}
                 />
               </div>
+
+              {errors.email && (
+                <p className="mt-1 text-sm text-red-500">{errors.email}</p>
+              )}
             </div>
 
             {/* Password */}
@@ -169,15 +197,18 @@ const handleLogin = async (e) => {
                   value={form.password}
                   onChange={handleChange}
                   placeholder="••••••••"
-                  required
-                  className="w-full border rounded-xl pl-10 pr-4 py-3 outline-none focus:ring-2 focus:ring-orange-400"
+                  className={`w-full rounded-xl pl-10 pr-4 py-3 outline-none transition ${
+                    errors.password
+                      ? "border border-red-500 focus:ring-2 focus:ring-red-400"
+                      : "border focus:ring-2 focus:ring-orange-400"
+                  }`}
                 />
               </div>
+
+              {errors.password && (
+                <p className="mt-1 text-sm text-red-500">{errors.password}</p>
+              )}
             </div>
-
-            {/* Error */}
-
-            {error && <p className="text-red-500 text-sm">{error}</p>}
 
             {/* Forgot Password */}
 
