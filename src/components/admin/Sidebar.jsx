@@ -11,6 +11,7 @@ import {
   Settings,
   LogOut,
 } from "lucide-react";
+import toast from "react-hot-toast";
 
 const menuItems = [
   {
@@ -51,7 +52,8 @@ export default function Sidebar() {
       });
 
       if (res.ok) {
-        router.push("/");
+        toast.success("Logged out successfully.");
+        router.replace("/auth/login");
         router.refresh();
       }
     } catch (error) {

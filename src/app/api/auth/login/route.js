@@ -1,18 +1,46 @@
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
-
 import connectDB from "@/lib/mongodb";
 import Admin from "@/models/Admin";
 import { createToken } from "@/lib/auth";
+import {
+  checkRateLimit,
+  recordFailedAttempt,
+  clearAttempts,
+} from "@/lib/rateLimiter";
 
 export async function POST(request) {
   try {
+    // Parse Request Body
     const body = await request.json();
 
     const email = body.email?.trim().toLowerCase();
     const password = body.password?.trim();
 
-    // Validate required fields
+    // Get Client IP
+    const ip =
+      request.headers.get("x-forwarded-for") ||
+      request.headers.get("x-real-ip") ||
+      "unknown";
+
+    // Check Rate Limit
+    const limit = checkRateLimit(ip);
+
+    if (!limit.allowed) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: `Too many login attempts. Please try again in ${Math.ceil(
+            limit.remaining / 60
+          )} minute(s).`,
+        },
+        {
+          status: 429,
+        }
+      );
+    }
+
+    // Validate Required Fields
     if (!email || !password) {
       return NextResponse.json(
         {
@@ -25,7 +53,7 @@ export async function POST(request) {
       );
     }
 
-    // Validate email format
+    // Validate Email Format
     const emailRegex =
       /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
@@ -41,7 +69,7 @@ export async function POST(request) {
       );
     }
 
-    // Validate password length
+    // Validate Password Length
     if (password.length < 8) {
       return NextResponse.json(
         {
@@ -54,12 +82,15 @@ export async function POST(request) {
       );
     }
 
+    // Connect Database
     await connectDB();
 
+    // Find Admin
     const admin = await Admin.findOne({ email });
 
-    // Don't reveal whether email or password is incorrect
     if (!admin) {
+      recordFailedAttempt(ip);
+
       return NextResponse.json(
         {
           success: false,
@@ -71,12 +102,15 @@ export async function POST(request) {
       );
     }
 
+    // Compare Password
     const isMatch = await bcrypt.compare(
       password,
       admin.password
     );
 
     if (!isMatch) {
+      recordFailedAttempt(ip);
+
       return NextResponse.json(
         {
           success: false,
@@ -87,6 +121,9 @@ export async function POST(request) {
         }
       );
     }
+
+    // Login Success
+    clearAttempts(ip);
 
     // Create JWT
     const token = createToken(admin);
@@ -101,6 +138,7 @@ export async function POST(request) {
       },
     });
 
+    // Set Cookie
     response.cookies.set("token", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",

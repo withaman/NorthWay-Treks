@@ -1,4 +1,5 @@
 import { Poppins } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import LayoutWrapper from "@/components/LayoutWrapper";
 import AuthProvider from "@/components/providers/AuthProvider";
@@ -40,6 +41,18 @@ export default function RootLayout({ children }) {
 
       <body className={`${poppins.className} antialiased`}>
         <AuthProvider>
+          <Toaster
+      position="top-right"
+      reverseOrder={false}
+      toastOptions={{
+        duration: 3000,
+        style: {
+          borderRadius: "12px",
+          background: "#fff",
+          color: "#333",
+        },
+      }}
+    />
           <LayoutWrapper>{children}</LayoutWrapper>
         </AuthProvider>
       </body>

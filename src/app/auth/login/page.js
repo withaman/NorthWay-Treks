@@ -1,5 +1,5 @@
 "use client";
-
+import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
 import { useAuth } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
@@ -71,19 +71,19 @@ export default function LoginPage() {
       const data = await res.json();
 
       if (!res.ok) {
-        setApiError(data?.message || "Login failed");
+        toast.error(data?.message || "Login failed");
         return;
       }
 
       // Update Auth Context
       await refreshAdmin();
-
+      toast.success("Welcome back 👋");
       // Don't redirect here.
       // The useEffect will automatically redirect
       // when admin becomes available.
     } catch (err) {
       console.error(err);
-      setApiError("Something went wrong.");
+      toast.error("Unable to connect to the server.");
     } finally {
       setLoading(false);
     }
